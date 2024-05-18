@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<fx:root fx:id="pnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="833.0" type="Pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fes.aragon.controller.UsuariosController">
+   <children>
+      <TableView fx:id="tblTablaUsuarios" layoutX="28.0" layoutY="176.0" prefHeight="293.0" prefWidth="778.0">
+        <columns>
+          <TableColumn fx:id="clmNombre" prefWidth="220.0" text="Nombre" />
+          <TableColumn fx:id="clmApellido" prefWidth="189.0" text="Apellido" />
+            <TableColumn fx:id="clmCorreo" prefWidth="187.0" text="Correo" />
+            <TableColumn fx:id="clmOperacion" prefWidth="180.0" text="Operación" />
+        </columns>
+      </TableView>
+      <FontAwesomeIconView fx:id="iconNuevoUsuario" fill="#c62525" glyphName="USER_PLUS" layoutX="51.0" layoutY="131.0" onMouseClicked="#accionUsuario" size="40" />
+      <FontAwesomeIconView fx:id="iconAbrirArchivo" fill="#3457e4" glyphName="SUPERPOWERS" layoutX="132.0" layoutY="131.0" onMouseClicked="#accionAbrirArchivo" size="40" />
+      <FontAwesomeIconView fx:id="iconSalvar" fill="#29a418" glyphName="SAVE" layoutX="210.0" layoutY="131.0" onMouseClicked="#accionGuardar" size="40" />
+      <ImageView fitHeight="111.0" fitWidth="179.0" layoutX="570.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagen/chiquito.png" />
+         </image>
+      </ImageView>
+   </children>
+</fx:root>

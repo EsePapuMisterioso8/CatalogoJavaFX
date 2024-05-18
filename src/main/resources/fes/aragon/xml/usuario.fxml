@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pnPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fes.aragon.controller.usuarioController">
+   <children>
+      <Label layoutX="77.0" layoutY="53.0" prefHeight="32.0" prefWidth="80.0" text="Nombre:" textFill="#0e170f">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="txtNombre" layoutX="222.0" layoutY="57.0" prefHeight="24.0" prefWidth="448.0" />
+      <TextField fx:id="txtApellidoPaterno" layoutX="222.0" layoutY="120.0" prefHeight="24.0" prefWidth="448.0" />
+      <TextField fx:id="txtCorreo" layoutX="222.0" layoutY="176.0" prefHeight="24.0" prefWidth="448.0" />
+      <Label layoutX="55.0" layoutY="116.0" prefHeight="32.0" prefWidth="124.0" text="Apellido Paterno:" textFill="#171b15">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="52.0" layoutY="172.0" prefHeight="32.0" prefWidth="131.0" text="Correo Electronico:" textFill="#131711" />
+      <Button fx:id="btnGuardarImagen" layoutX="86.0" layoutY="261.0" mnemonicParsing="false" onAction="#guardarImagen" text="Imagen" />
+      <ImageView fx:id="imgImagen" fitHeight="150.0" fitWidth="339.0" layoutX="284.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnGuardarUsuario" layoutX="329.0" layoutY="412.0" mnemonicParsing="false" onAction="#guardarUsuario" text="Guardar" />
+   </children>
+</Pane>
