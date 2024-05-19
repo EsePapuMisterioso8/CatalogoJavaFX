@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
@@ -8,22 +9,34 @@
 
 <BorderPane fx:id="btpPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="1129.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fes.aragon.controller.InicioController">
    <left>
-      <ToolBar orientation="VERTICAL" prefHeight="543.0" prefWidth="336.0" style="-fx-background-color: #99B629;" BorderPane.alignment="CENTER">
+      <ToolBar orientation="VERTICAL" prefHeight="543.0" prefWidth="330.0" style="-fx-background-color: #384294#384294;" BorderPane.alignment="CENTER">
         <items>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="163.0" fitWidth="230.0" layoutX="-23.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../imagen/portada.png" />
                </image>
             </ImageView>
-          <Button fx:id="bntArchivo" mnemonicParsing="false" onAction="#abrirArchivo" prefHeight="24.0" prefWidth="191.0" styleClass="alert-success" text="Archivos" />
-            <Button fx:id="btnRacionales" mnemonicParsing="false" onAction="#accionAbrirRacionales" prefHeight="24.0" prefWidth="192.0" styleClass="alert-success" text="Racionales" />
-            <Button fx:id="btnUsuarios" mnemonicParsing="false" onAction="#accionAbrirUsuarios" prefHeight="24.0" prefWidth="192.0" styleClass="alert-success" text="Usuarios" />
-            <Button fx:id="btnJuego" mnemonicParsing="false" onAction="#accionJuego" prefHeight="24.0" prefWidth="191.0" styleClass="alert-success" text="Juego" />
+          <Button fx:id="bntArchivo" alignment="CENTER" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#abrirArchivo" prefHeight="35.0" prefWidth="195.0" text="Archivos" textOverrun="LEADING_ELLIPSIS" translateX="18.0" translateY="7.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="ARCHIVE" />
+               </graphic></Button>
+            <Button fx:id="btnRacionales" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#accionAbrirRacionales" prefHeight="35.0" prefWidth="195.0" styleClass="alert-success" text="Racionales" textOverrun="LEADING_ELLIPSIS" translateX="18.0" translateY="11.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="CALCULATOR" />
+               </graphic></Button>
+            <Button fx:id="btnUsuarios" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#accionAbrirUsuarios" prefHeight="35.0" prefWidth="195.0" styleClass="alert-success" text="Usuarios" textOverrun="LEADING_ELLIPSIS" translateX="18.0" translateY="15.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USER" />
+               </graphic></Button>
+            <Button fx:id="btnJuego" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#accionJuego" prefHeight="35.0" prefWidth="195.0" styleClass="alert-success" text="Juego" textOverrun="LEADING_ELLIPSIS" translateX="18.0" translateY="19.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="GAMEPAD" />
+               </graphic></Button>
         </items>
       </ToolBar>
    </left>
    <center>
-      <ImageView fitHeight="546.0" fitWidth="974.0" pickOnBounds="true" preserveRatio="true" y="-5.0" BorderPane.alignment="CENTER">
+      <ImageView fitHeight="552.0" fitWidth="975.0" pickOnBounds="true" preserveRatio="true" y="-5.0" BorderPane.alignment="CENTER">
          <image>
             <Image url="@../imagen/CR7W.jpg" />
          </image>
