@@ -12,7 +12,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.kordamp.bootstrapfx.BootstrapFX;
-
 import java.io.IOException;
 
 public class Inicio extends Application {
@@ -25,13 +24,7 @@ public class Inicio extends Application {
         stage.setScene(scene);
         stage.show();
     }
-//xddddddddd
-//Wazaaaaaaaaa
-    //olaaaaaaaaaa
-    //Ae
     public static void main(String[] args) {
         launch();
     }
-    //wazaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    //mnmnmnmnmnmnmnmnmnmnm
 }
