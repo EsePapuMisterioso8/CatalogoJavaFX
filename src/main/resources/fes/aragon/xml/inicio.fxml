@@ -8,7 +8,7 @@
 
 <BorderPane fx:id="btpPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="1129.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fes.aragon.controller.InicioController">
    <left>
-      <ToolBar orientation="VERTICAL" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #99B629;" BorderPane.alignment="CENTER">
+      <ToolBar orientation="VERTICAL" prefHeight="543.0" prefWidth="336.0" style="-fx-background-color: #99B629;" BorderPane.alignment="CENTER">
         <items>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -23,9 +23,9 @@
       </ToolBar>
    </left>
    <center>
-      <ImageView fitHeight="526.0" fitWidth="665.0" pickOnBounds="true" preserveRatio="true" y="-5.0" BorderPane.alignment="CENTER">
+      <ImageView fitHeight="546.0" fitWidth="974.0" pickOnBounds="true" preserveRatio="true" y="-5.0" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@../imagen/CR7.png" />
+            <Image url="@../imagen/CR7W.jpg" />
          </image>
       </ImageView>
    </center>
