@@ -27,4 +27,5 @@ public class Inicio extends Application {
         launch();
     }
     //wazaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    //mnmnmnmnmnmnmnmnmnmnm
 }
