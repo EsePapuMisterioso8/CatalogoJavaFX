@@ -18,7 +18,7 @@ public class Inicio extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
+//xddddddddd
     public static void main(String[] args) {
         launch();
     }
