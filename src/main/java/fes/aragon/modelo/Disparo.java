@@ -75,5 +75,5 @@ public class Disparo extends ComponentesJuego{
     public ArrayList<Rectangle> getDisparos(){
         return disparos;
     }
-    //xddddddddddddddddd
+    //wazaaaaaaaaaaaaaaa
 }
