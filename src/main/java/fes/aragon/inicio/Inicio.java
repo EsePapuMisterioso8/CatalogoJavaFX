@@ -2,6 +2,7 @@ package fes.aragon.inicio;
 //Ola xd como esta si se ve xd? Wazaaaaaaa
 //Wazaaaaaaaaa ola ptm porqueria no sirve , otro intento xd xd xd xd xd xd aaaaaa
 //aaaaaaaaaa
+//OLA PAPUUUUU
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
