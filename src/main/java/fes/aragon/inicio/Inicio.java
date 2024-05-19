@@ -28,3 +28,4 @@ public class Inicio extends Application {
     }
     //wazaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 }
+//Wazaaaaaaa ola
