@@ -20,6 +20,7 @@ public class Inicio extends Application {
     }
 //xddddddddd
 //Wazaaaaaaaaa
+    //olaaaaaaaaaa
     public static void main(String[] args) {
         launch();
     }
