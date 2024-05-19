@@ -36,8 +36,6 @@ public class Nave extends ComponentesJuego {
     @Override
     public void pintar(GraphicsContext grafico) {
         grafico.drawImage(imageNave, x, y, ancho, alto);
-
-
     }
 
     @Override

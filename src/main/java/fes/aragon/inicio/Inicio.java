@@ -1,5 +1,5 @@
 package fes.aragon.inicio;
-
+//Ola xd
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
