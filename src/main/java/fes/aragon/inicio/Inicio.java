@@ -19,6 +19,7 @@ public class Inicio extends Application {
         stage.show();
     }
 //xddddddddd
+//Wazaaaaaaaaa
     public static void main(String[] args) {
         launch();
     }
