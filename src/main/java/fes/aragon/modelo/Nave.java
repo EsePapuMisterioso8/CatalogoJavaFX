@@ -19,8 +19,8 @@ public class Nave extends ComponentesJuego {
     private boolean arriba = false;
     private boolean abajo = false;
     private boolean disparo = false;
-    private int ancho = 20;
-    private int alto = 20;
+    private int ancho = 40;
+    private int alto = 40;
     private Image imageNave;
 
     public Nave(int x, int y, String imagen, int velocidad) {
