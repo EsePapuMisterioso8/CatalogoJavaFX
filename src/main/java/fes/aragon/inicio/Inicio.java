@@ -5,6 +5,7 @@ package fes.aragon.inicio;
 //OLA PAPUUUUU
 //Gael no te ayuda a subir tu squeak pq le bjas de copas xd xd xd xd
 //Gael nos hace una papeada termonuclear
+//Bocchi la roca >>> Dodo
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
