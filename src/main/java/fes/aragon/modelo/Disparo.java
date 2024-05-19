@@ -29,7 +29,7 @@ public class Disparo extends ComponentesJuego{
 
     @Override
     public void teclado(KeyEvent evento, boolean presion) {
-    //hola
+    
     }
 
     @Override
