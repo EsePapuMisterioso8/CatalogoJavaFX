@@ -111,5 +111,6 @@ public class Nave extends ComponentesJuego {
             SinglentonJuegos.getInstance().getDisparo().getDisparos().add(bala);
             disparo= false;
         }
+        //prueba
     }
 }
