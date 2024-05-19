@@ -129,6 +129,9 @@ public class UsuariosController implements Initializable {
     clmNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
     clmApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
     clmCorreo.setCellValueFactory(new PropertyValueFactory<>("correo"));
+    iconNuevoUsuario.setGlyphStyle("-fx-cursor:hand;");
+    iconAbrirArchivo.setGlyphStyle("-fx-cursor:hand;");
+    iconSalvar.setGlyphStyle("-fx-cursor:hand;");
 
      Callback<TableColumn<Persona, String>, TableCell<Persona, String>>
                 celda= (TableColumn<Persona,String> parametros)->{
