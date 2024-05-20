@@ -31,15 +31,22 @@ public class InicioController {
     void abrirArchivo(ActionEvent event) {
         escena("/fes/aragon/xml/archivo.fxml");
     }
+
     @FXML
     void accionAbrirRacionales(ActionEvent event) {
         escena("/fes/aragon/xml/racional.fxml");
     }
+
     @FXML
     void accionAbrirUsuarios(ActionEvent event) {
         escena("/fes/aragon/xml/usuarios.fxml");
     }
-    public void escena(String ruta){
+    @FXML
+    void accionJuego(ActionEvent event) {
+        escena("/fes/aragon/xml/menu.fxml");
+    }
+
+    public void escena(String ruta) {
         try {
             Contenido contenido = new Contenido(ruta);
             btpPrincipal.setCenter(contenido);
@@ -47,23 +54,4 @@ public class InicioController {
             throw new RuntimeException(e);
         }
     }
-
-    @FXML
-    void accionJuego(ActionEvent event) {
-     try {
-         FXMLLoader modificar = new FXMLLoader(getClass().getResource("/fes/aragon/xml/juego.fxml"));
-         Parent parent  = (Parent)modificar.load();
-            Scene scene = new Scene(parent);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.initStyle(StageStyle.UTILITY);
-            stage.initModality(Modality.APPLICATION_MODAL);
-            ((JuegoController)modificar.getController()).setEscena(scene);
-            ((JuegoController)modificar.getController()).iniciar();
-            stage.show();
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-    }
-
 }
