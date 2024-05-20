@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fes.aragon.xml.Musica"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<Pane fx:id="pnePrincipalmusica" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fes.aragon.controller.MusicaController">
+   <children>
+      <Label layoutX="301.0" layoutY="48.0" text="Escoge una canción  ">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblTablamusica" layoutX="137.0" layoutY="187.0" prefHeight="200.0" prefWidth="586.0">
+        <columns>
+          <TableColumn id="clmNombre" fx:id="clmCancionNombre" prefWidth="461.0" text="Canción" />
+          <TableColumn id="clmAccion" fx:id="clmAccion" prefWidth="124.0" text="Acción " />
+        </columns>
+      </TableView>
+   </children>
+</Pane>
