@@ -1,33 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="pneMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="783.0" type="Pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fes.aragon.controller.MenuController">
+<fx:root fx:id="pneMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="890.0" type="Pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fes.aragon.controller.MenuController">
    <children>
-      <Label layoutX="26.0" layoutY="502.0" text="Version: 0.1">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnabrirjuego" layoutX="176.0" layoutY="238.0" mnemonicParsing="false" onAction="#accionAbrirjuego" prefHeight="48.0" prefWidth="120.0" text="Jugar">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnmusica" layoutX="451.0" layoutY="238.0" mnemonicParsing="false" onAction="#accionPonermusica" prefHeight="48.0" prefWidth="120.0" text="Musica">
+      <ImageView fitHeight="508.0" fitWidth="892.0" layoutX="59.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" translateX="-60.0">
+         <image>
+            <Image url="@../imagen/FondoMenu.jpeg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnabrirjuego" alignment="CENTER" layoutX="79.0" layoutY="193.0" mnemonicParsing="false" onAction="#accionAbrirjuego" prefHeight="60.0" prefWidth="160.0" text="Jugar" textOverrun="LEADING_ELLIPSIS">
          <font>
             <Font size="20.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <FontAwesomeIconView glyphName="GAMEPAD" />
+         </graphic>
       </Button>
-      <FontAwesomeIconView glyphName="CAMERA" layoutX="456.0" layoutY="266.0" />
-      <FontAwesomeIconView glyphName="GAMEPAD" layoutX="183.0" layoutY="266.0" />
-      <ImageView fitHeight="115.0" fitWidth="676.0" layoutX="54.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="btnmusica" alignment="CENTER" layoutX="79.0" layoutY="281.0" mnemonicParsing="false" onAction="#accionPonermusica" prefHeight="60.0" prefWidth="160.0" text="Musica" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <FontAwesomeIconView glyphName="MUSIC" />
+         </graphic>
+      </Button>
+      <ImageView fitHeight="123.0" fitWidth="565.0" layoutX="25.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagen/Menu.png" />
          </image>
