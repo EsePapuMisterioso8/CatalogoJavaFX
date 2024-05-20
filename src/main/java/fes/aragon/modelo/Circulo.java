@@ -12,7 +12,7 @@ public class Circulo extends ComponentesJuego{
 
     @Override
     public void pintar(GraphicsContext grafico) {
-        grafico.strokeOval(x,y,40,40);
+        grafico.strokeOval(x,y,60,60);
     }
 
     @Override
