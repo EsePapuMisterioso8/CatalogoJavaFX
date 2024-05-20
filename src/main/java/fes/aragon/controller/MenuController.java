@@ -44,7 +44,17 @@ public class MenuController {
 
     @FXML
     void accionPonermusica(ActionEvent event) {
-
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/fes/aragon/xml/musica.fxml"));
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.show();
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
 }
