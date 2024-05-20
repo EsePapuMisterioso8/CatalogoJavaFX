@@ -13,6 +13,11 @@ public class MusicaCiclica implements Runnable{
     private BufferedInputStream buffer=null;
     private Player player;
     private FileInputStream archivo;
+
+    public String getNombreArchivo() {
+        return nombreArchivo;
+    }
+
     private String nombreArchivo;
     public MusicaCiclica(String nombreArchivo){
         this.nombreArchivo = nombreArchivo;

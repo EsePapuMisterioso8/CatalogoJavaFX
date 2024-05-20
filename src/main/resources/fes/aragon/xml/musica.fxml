@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane fx:id="pnePrincipalmusica" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fes.aragon.controller.MusicaController">
+<Pane fx:id="pnePrincipalmusica" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="855.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fes.aragon.controller.MusicaController">
    <children>
       <Label layoutX="301.0" layoutY="48.0" text="Escoge una canción  ">
          <font>
@@ -16,8 +15,9 @@
       </Label>
       <TableView fx:id="tblTablamusica" layoutX="137.0" layoutY="187.0" prefHeight="200.0" prefWidth="586.0">
         <columns>
-          <TableColumn id="clmNombre" fx:id="clmCancionNombre" prefWidth="461.0" text="Canción" />
-          <TableColumn id="clmAccion" fx:id="clmAccion" prefWidth="124.0" text="Acción " />
+          <TableColumn id="clmNombre" fx:id="clmCancionNombre" prefWidth="186.0" text="Canción" />
+          <TableColumn id="clmRuta" fx:id="clmRuta" prefWidth="208.0" text="Ruta" />
+            <TableColumn id="clmAccion" fx:id="clmAccion" prefWidth="189.0" text="Accion " />
         </columns>
       </TableView>
    </children>
