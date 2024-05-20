@@ -7,6 +7,7 @@ package fes.aragon.inicio;
 //Gael nos hace una papeada termonuclear
 //Bocchi la roca >>> Dodo
 //America = gay
+//Jajaja el frustrazul casi la caga xd xd
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
