@@ -19,10 +19,14 @@ import java.util.Random;
 public class Enemigo extends ComponentesJuego{
     private ArrayList<Rectangle> enemigo = new ArrayList<>();
     private boolean movimiento=true;
+    private  Image imagenEnemigo;
+
 
     public Enemigo(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
-
+        File file = new File(imagen);
+        this.imagenEnemigo = new Image(file.toURI().toString());
+        System.out.println(this.enemigo);
         int salto=0;
         int xx = 20;
         int yy= 20;
@@ -40,9 +44,14 @@ public class Enemigo extends ComponentesJuego{
 
     }
 
+    public void setImagenEnemigo(Image imagenEnemigo) {
+        this.imagenEnemigo = imagenEnemigo;
+    }
+
     @Override
     public void pintar(GraphicsContext grafico) {
        for(Rectangle rectangle : enemigo){
+           grafico.drawImage(imagenEnemigo,rectangle.getX(),rectangle.getY());
            grafico.strokeRect(rectangle.getX(),rectangle.getY(), rectangle.getWidth(), rectangle.getHeight());
        }
     }

@@ -24,7 +24,7 @@ public class SinglentonJuegos {
         nave = new Nave(50,200,getClass().getResource("/fes/aragon/imagen/del.jpeg").getFile(),1);
         fondo=new Fondo(0,0,getClass().getResource("/fes/aragon/imagen/fondo2.jpg").getFile(),
                 getClass().getResource("/fes/aragon/imagen/fondo3.jpg").getFile(),3);
-        enemigo = new Enemigo(20,20,null,1);
+        enemigo = new Enemigo(20,20,getClass().getResource("/fes/aragon/imagen/Cyrno.png").getFile(),1);
         disparo = new Disparo(0,0,null,3);
         circulo = new Circulo(40,30,null,1);
         elementos = new ArrayList<>();
