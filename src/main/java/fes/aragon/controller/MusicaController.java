@@ -45,7 +45,7 @@ public class MusicaController implements Initializable {
 //para colocar canciones y el boton de reproducir falat implementar la funcion del boton
     this.clmCancionNombre.setCellValueFactory(new PropertyValueFactory<>("nombreArchivo"));
     MusicaCiclica musicaCiclica = new MusicaCiclica("BadApple");
-        MusicaCiclica musicaCiclica2 = new MusicaCiclica("musica_entrada");
+        MusicaCiclica musicaCiclica2 = new MusicaCiclica("MusicaMenu");
         ObservableList<MusicaCiclica> list = FXCollections.observableArrayList();
         list.add(musicaCiclica);
         list.add(musicaCiclica2);
@@ -74,7 +74,8 @@ public class MusicaController implements Initializable {
                             list.remove(indice);
                        });
                        reproducirIcono.setOnMouseClicked((MouseEvent evento)->{
-                           musicaCiclica.run();
+                           int indice = tblTablamusica.getSelectionModel().getSelectedIndex();
+                           list.get(indice).run();
                        });
                        HBox hBox = new HBox(reproducirIcono, borrarIcono);
                        hBox.setStyle("-fx-alignment:center");
