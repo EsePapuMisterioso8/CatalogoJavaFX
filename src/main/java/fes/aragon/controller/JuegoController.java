@@ -84,7 +84,7 @@ public class JuegoController {
     private void componentesIniciar(){
         graficos = canvas.getGraphicsContext2D();
         SinglentonJuegos.getInstance();
-        MusicaCiclica musicaCiclica = new MusicaCiclica("musica_entrada");
+        MusicaCiclica musicaCiclica = new MusicaCiclica("MusicaMenu");
         hiloFondo = new Thread(musicaCiclica);
         hiloFondo.start();
     }

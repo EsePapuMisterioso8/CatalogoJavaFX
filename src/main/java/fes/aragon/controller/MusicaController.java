@@ -39,8 +39,6 @@ public class MusicaController implements Initializable {
     private TableView<MusicaCiclica> tblTablamusica;
     private ArrayList<MusicaCiclica> canciones;
     private ObservableList<MusicaCiclica> cancionesTabla;
-    private MusicaCiclica cancion;
-    private Thread hilo;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -72,24 +70,11 @@ public class MusicaController implements Initializable {
                        reproducirIcono.setGlyphStyle("-fx-cursor:hand;"+"-glyph-size:28px;"+"-fx-fill:#ff1744");
                        //
                        borrarIcono.setOnMouseClicked((MouseEvent evento)->{
-                           //int indice = tblTablamusica.getSelectionModel().getSelectedIndex();
-                            //list.remove(indice);
-                            cancion = tblTablamusica.getSelectionModel().getSelectedItem();
-                            list.remove(cancion);
-                            hilo = new Thread(cancion);
-                            hilo.stop();
-
+                            int indice = tblTablamusica.getSelectionModel().getSelectedIndex();
+                            list.remove(indice);
                        });
                        reproducirIcono.setOnMouseClicked((MouseEvent evento)->{
-                        
-                           cancion = tblTablamusica.getSelectionModel().getSelectedItem();
-                           System.out.println(cancion);
-                           Thread hilosEfectos = new Thread(cancion);
-                           hilosEfectos.start();
-
-
-
-                           //musicaCiclica.run();
+                           musicaCiclica.run();
                        });
                        HBox hBox = new HBox(reproducirIcono, borrarIcono);
                        hBox.setStyle("-fx-alignment:center");
