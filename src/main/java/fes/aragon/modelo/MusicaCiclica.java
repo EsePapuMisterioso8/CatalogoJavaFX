@@ -14,6 +14,7 @@ public class MusicaCiclica implements Runnable{
     private Player player;
     private FileInputStream archivo;
 
+
     public String getNombreArchivo() {
         return nombreArchivo;
     }
