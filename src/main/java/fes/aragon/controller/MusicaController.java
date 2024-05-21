@@ -44,11 +44,13 @@ public class MusicaController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 //para colocar canciones y el boton de reproducir falat implementar la funcion del boton
     this.clmCancionNombre.setCellValueFactory(new PropertyValueFactory<>("nombreArchivo"));
-    MusicaCiclica musicaCiclica = new MusicaCiclica("BadApple");
+        MusicaCiclica musicaCiclica = new MusicaCiclica("BadApple");
         MusicaCiclica musicaCiclica2 = new MusicaCiclica("MusicaMenu");
+        MusicaCiclica musicaCiclica3 = new MusicaCiclica("Yuusha");
         ObservableList<MusicaCiclica> list = FXCollections.observableArrayList();
         list.add(musicaCiclica);
         list.add(musicaCiclica2);
+        list.add(musicaCiclica3);
         cancionesTabla = list;
     this.tblTablamusica.setItems(cancionesTabla);
 
