@@ -63,12 +63,19 @@ public class MusicaController implements Initializable {
                    }else{
                        FontAwesomeIconView borrarIcono = new FontAwesomeIconView(FontAwesomeIcon.TRASH);
                        borrarIcono.setGlyphStyle("-fx-cursor:hand;"+"-glyph-size:28px;"+"-fx-fill:#ff1744");
+                       //
+                       FontAwesomeIconView reproducirIcono = new FontAwesomeIconView(FontAwesomeIcon.PLAY);
+                       reproducirIcono.setGlyphStyle("-fx-cursor:hand;"+"-glyph-size:28px;"+"-fx-fill:#ff1744");
+                       //
                        borrarIcono.setOnMouseClicked((MouseEvent evento)->{
 
-
                        });
-                       HBox hBox = new HBox(borrarIcono);
+                       reproducirIcono.setOnMouseClicked((MouseEvent evento)->{
+                           musicaCiclica.run();
+                       });
+                       HBox hBox = new HBox(reproducirIcono, borrarIcono);
                        hBox.setStyle("-fx-alignment:center");
+                       HBox.setMargin(reproducirIcono,new Insets(2,2,0,3));
                        HBox.setMargin(borrarIcono,new Insets(2,2,0,3));
                        setGraphic(hBox);
                        setText(null);
