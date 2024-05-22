@@ -13,6 +13,8 @@ public class MusicaCiclica implements Runnable{
     private BufferedInputStream buffer=null;
     private Player player;
     private FileInputStream archivo;
+    private boolean estado;
+    private Thread hilo;
 
 
     public String getNombreArchivo() {
@@ -56,5 +58,20 @@ public class MusicaCiclica implements Runnable{
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void setEstado(boolean estado){
+        this.estado = estado;
+    }
+    public boolean getEstado(){
+        return  estado;
+    }
+    public void stop(){
+        this.player.close();
+    }
+    public void setHilo(Thread hilo){
+        this.hilo = hilo;
+    }
+    public Thread getHilo(){
+        return hilo;
     }
 }

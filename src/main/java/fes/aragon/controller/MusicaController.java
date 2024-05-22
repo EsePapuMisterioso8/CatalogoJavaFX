@@ -15,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.net.URL;
@@ -39,16 +40,20 @@ public class MusicaController implements Initializable {
     private TableView<MusicaCiclica> tblTablamusica;
     private ArrayList<MusicaCiclica> canciones;
     private ObservableList<MusicaCiclica> cancionesTabla;
+    private boolean activo;
+    private Thread hilo;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 //para colocar canciones y el boton de reproducir falat implementar la funcion del boton
     this.clmCancionNombre.setCellValueFactory(new PropertyValueFactory<>("nombreArchivo"));
     MusicaCiclica musicaCiclica = new MusicaCiclica("BadApple");
-       // MusicaCiclica musicaCiclica2 = new MusicaCiclica("musica_entrada");
+        MusicaCiclica musicaCiclica2 = new MusicaCiclica("MusicaMenu");
+        MusicaCiclica musicaCiclica3 = new MusicaCiclica("MegavsZero");
         ObservableList<MusicaCiclica> list = FXCollections.observableArrayList();
         list.add(musicaCiclica);
-        //list.add(musicaCiclica2);
+        list.add(musicaCiclica2);
+        list.add(musicaCiclica3);
         cancionesTabla = list;
     this.tblTablamusica.setItems(cancionesTabla);
 
@@ -71,12 +76,14 @@ public class MusicaController implements Initializable {
                        //
                        borrarIcono.setOnMouseClicked((MouseEvent evento)->{
                             int indice = tblTablamusica.getSelectionModel().getSelectedIndex();
-                            list.remove(indice);
+                           System.out.println(tblTablamusica.getSelectionModel().getSelectedIndex());
+                           list.get(indice).getHilo().stop();
                        });
                        reproducirIcono.setOnMouseClicked((MouseEvent evento)->{
-                           MusicaCiclica musicaCiclica1 = tblTablamusica.getSelectionModel().getSelectedItem();
-                           Thread thread = new Thread(musicaCiclica1);
-                           thread.start();
+                        MusicaCiclica musicaCiclica1 = tblTablamusica.getSelectionModel().getSelectedItem();
+                           System.out.println(tblTablamusica.getSelectionModel().getSelectedIndex());
+                        musicaCiclica1.setHilo( hilo = new Thread(musicaCiclica1));
+                       hilo.start();
                        });
                        HBox hBox = new HBox(reproducirIcono, borrarIcono);
                        hBox.setStyle("-fx-alignment:center");
@@ -90,5 +97,13 @@ public class MusicaController implements Initializable {
            return cel;
         };
         this.clmAccion.setCellFactory(celda);
+    }
+    public void cerrarJuego(){
+        Stage stage = (Stage) pnePrincipalmusica.getScene().getWindow();
+        stage.setOnCloseRequest((t)->{
+            hilo.stop();
+            stage.close();
+            }
+        );
     }
 }
