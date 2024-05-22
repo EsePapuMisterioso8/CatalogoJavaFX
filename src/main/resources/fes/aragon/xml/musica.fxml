@@ -15,9 +15,8 @@
       </Label>
       <TableView fx:id="tblTablamusica" layoutX="137.0" layoutY="187.0" prefHeight="200.0" prefWidth="586.0">
         <columns>
-          <TableColumn id="clmNombre" fx:id="clmCancionNombre" prefWidth="186.0" text="Canción" />
-          <TableColumn id="clmRuta" fx:id="clmRuta" prefWidth="208.0" text="Ruta" />
-            <TableColumn id="clmAccion" fx:id="clmAccion" prefWidth="189.0" text="Accion " />
+          <TableColumn id="clmNombre" fx:id="clmCancionNombre" prefWidth="421.0" text="Canción" />
+            <TableColumn id="clmAccion" fx:id="clmAccion" prefWidth="164.0" text="Accion " />
         </columns>
       </TableView>
    </children>

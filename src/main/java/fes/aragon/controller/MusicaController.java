@@ -31,16 +31,11 @@ public class MusicaController implements Initializable {
     private TableColumn<MusicaCiclica, String> clmCancionNombre;
 
     @FXML
-    private TableColumn<MusicaCiclica, String> clmRuta;
-
-    @FXML
     private Pane pnePrincipalmusica;
 
     @FXML
     private TableView<MusicaCiclica> tblTablamusica;
-    private ArrayList<MusicaCiclica> canciones;
     private ObservableList<MusicaCiclica> cancionesTabla;
-    private boolean activo;
     private Thread hilo;
 
     @Override
