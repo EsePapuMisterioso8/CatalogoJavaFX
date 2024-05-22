@@ -50,10 +50,12 @@ public class MusicaController implements Initializable {
     MusicaCiclica musicaCiclica = new MusicaCiclica("BadApple");
         MusicaCiclica musicaCiclica2 = new MusicaCiclica("MusicaMenu");
         MusicaCiclica musicaCiclica3 = new MusicaCiclica("MegavsZero");
+        MusicaCiclica musicaCiclica4 = new MusicaCiclica("Yuusha");
         ObservableList<MusicaCiclica> list = FXCollections.observableArrayList();
         list.add(musicaCiclica);
         list.add(musicaCiclica2);
         list.add(musicaCiclica3);
+        list.add(musicaCiclica4);
         cancionesTabla = list;
     this.tblTablamusica.setItems(cancionesTabla);
 
