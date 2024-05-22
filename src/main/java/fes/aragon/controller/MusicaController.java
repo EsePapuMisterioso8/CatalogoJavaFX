@@ -68,13 +68,13 @@ public class MusicaController implements Initializable {
                        setGraphic(null);
                        setText(null);
                    }else{
-                       FontAwesomeIconView borrarIcono = new FontAwesomeIconView(FontAwesomeIcon.TRASH);
-                       borrarIcono.setGlyphStyle("-fx-cursor:hand;"+"-glyph-size:28px;"+"-fx-fill:#ff1744");
+                       FontAwesomeIconView detenerIcono = new FontAwesomeIconView(FontAwesomeIcon.STOP);
+                       detenerIcono.setGlyphStyle("-fx-cursor:hand;"+"-glyph-size:28px;"+"-fx-fill:#ff1744");
                        //
                        FontAwesomeIconView reproducirIcono = new FontAwesomeIconView(FontAwesomeIcon.PLAY);
                        reproducirIcono.setGlyphStyle("-fx-cursor:hand;"+"-glyph-size:28px;"+"-fx-fill:#ff1744");
                        //
-                       borrarIcono.setOnMouseClicked((MouseEvent evento)->{
+                       detenerIcono.setOnMouseClicked((MouseEvent evento)->{
                             int indice = tblTablamusica.getSelectionModel().getSelectedIndex();
                            System.out.println(tblTablamusica.getSelectionModel().getSelectedIndex());
                            list.get(indice).getHilo().stop();
@@ -85,10 +85,10 @@ public class MusicaController implements Initializable {
                         musicaCiclica1.setHilo( hilo = new Thread(musicaCiclica1));
                        hilo.start();
                        });
-                       HBox hBox = new HBox(reproducirIcono, borrarIcono);
+                       HBox hBox = new HBox(reproducirIcono, detenerIcono);
                        hBox.setStyle("-fx-alignment:center");
                        HBox.setMargin(reproducirIcono,new Insets(2,2,0,3));
-                       HBox.setMargin(borrarIcono,new Insets(2,2,0,3));
+                       HBox.setMargin(detenerIcono,new Insets(2,2,0,3));
                        setGraphic(hBox);
                        setText(null);
                    }
