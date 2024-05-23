@@ -51,12 +51,12 @@
       <Button fx:id="btnResolver" layoutX="252.0" layoutY="273.0" mnemonicParsing="false" onAction="#eventoResolver" prefHeight="36.0" prefWidth="98.0" style="-fx-background-color: #7CD257;" text="Resolver" />
       <ImageView fitHeight="126.0" fitWidth="247.0" layoutX="478.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imagen/slime.png" />
+            <Image url="@../imagen/Slime.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-110.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imagen/images(1).png" />
+            <Image url="@../imagen/Trunks.png" />
          </image>
       </ImageView>
    </children>
