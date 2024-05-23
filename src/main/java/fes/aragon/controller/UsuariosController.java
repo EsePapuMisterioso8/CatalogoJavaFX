@@ -115,14 +115,7 @@ public class UsuariosController implements Initializable {
             throw new RuntimeException(ex);
         }
         tblTablaUsuarios.setItems(SingletonUsuarios.getInstance().getLista());
-
-
     }
-
-
-
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -177,17 +170,10 @@ public class UsuariosController implements Initializable {
                    }
 
                }
-
-
            };
            return cel;
         };
         this.clmOperacion.setCellFactory(celda);
-
-
-
-
-
     }
 
    private void modificarUsuario(int indice ){

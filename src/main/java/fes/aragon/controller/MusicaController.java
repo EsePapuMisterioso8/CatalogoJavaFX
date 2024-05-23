@@ -73,13 +73,12 @@ public class MusicaController implements Initializable {
                        reproducirIcono.setGlyphStyle("-fx-cursor:hand;"+"-glyph-size:28px;"+"-fx-fill:#ff1744");
                        //
                        detenerIcono.setOnMouseClicked((MouseEvent evento)->{
-                            int indice = tblTablamusica.getSelectionModel().getSelectedIndex();
+                           int indice = tblTablamusica.getSelectionModel().getSelectedIndex();
                            System.out.println(tblTablamusica.getSelectionModel().getSelectedIndex());
                            list.get(indice).getHilo().stop();
                            corriendo = false;
                        });
                        reproducirIcono.setOnMouseClicked((MouseEvent evento)->{
-
                            if(!corriendo) {
                                MusicaCiclica musicaCiclica1 = tblTablamusica.getSelectionModel().getSelectedItem();
                                System.out.println(tblTablamusica.getSelectionModel().getSelectedIndex());
@@ -88,7 +87,7 @@ public class MusicaController implements Initializable {
                                corriendo = true;
                            }
                            else {
-                               System.out.println("Por favor detenga la reproducción antes de reproducir otra canción");
+                               System.out.println("Detenga la reproducción actual antes de reproducir otra canción");
                            }
                        });
                        HBox hBox = new HBox(reproducirIcono, detenerIcono);
