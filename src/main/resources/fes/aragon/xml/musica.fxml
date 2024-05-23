@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
 
-<Pane fx:id="pnePrincipalmusica" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="855.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fes.aragon.controller.MusicaController">
+<Pane fx:id="pnePrincipalmusica" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fes.aragon.controller.MusicaController">
    <children>
-      <Label layoutX="301.0" layoutY="48.0" text="Escoge una canción  ">
-         <font>
-            <Font size="23.0" />
-         </font>
-      </Label>
-      <TableView fx:id="tblTablamusica" layoutX="137.0" layoutY="187.0" prefHeight="200.0" prefWidth="586.0">
+      <ImageView fitHeight="482.0" fitWidth="855.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagen/FondoTabla.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblTablamusica" layoutX="120.0" layoutY="125.0" opacity="0.7" prefHeight="300.0" prefWidth="600.0">
         <columns>
-          <TableColumn id="clmNombre" fx:id="clmCancionNombre" prefWidth="421.0" text="Canción" />
-            <TableColumn id="clmAccion" fx:id="clmAccion" prefWidth="164.0" text="Accion " />
+          <TableColumn id="clmNombre" fx:id="clmCancionNombre" prefWidth="410.33331298828125" text="Canción" />
+            <TableColumn id="clmAccion" fx:id="clmAccion" prefWidth="174.66668701171875" text="Accion " />
         </columns>
       </TableView>
+      <ImageView fitHeight="80.0" fitWidth="450.0" layoutX="200.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagen/MusicaMenu.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
