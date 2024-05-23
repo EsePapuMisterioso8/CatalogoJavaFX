@@ -14,7 +14,7 @@
         <items>
             <ImageView fitHeight="136.0" fitWidth="221.0" layoutX="-23.0" pickOnBounds="true" preserveRatio="true" translateX="4.0" translateY="2.0">
                <image>
-                  <Image url="@../imagen/portada.png" />
+                  <Image url="@../imagen/Portada.png" />
                </image>
             </ImageView>
           <Button fx:id="bntArchivo" alignment="CENTER" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#abrirArchivo" prefHeight="35.0" prefWidth="195.0" styleClass="btn" text="Archivos" textOverrun="LEADING_ELLIPSIS" translateX="18.0" translateY="7.0">
@@ -51,7 +51,7 @@
    <center>
       <ImageView fitHeight="495.0" fitWidth="889.0" pickOnBounds="true" preserveRatio="true" translateX="-1.0" y="-5.0" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@../imagen/CR7W.jpg" />
+            <Image url="@../imagen/CR7.jpg" />
          </image>
       </ImageView>
    </center>

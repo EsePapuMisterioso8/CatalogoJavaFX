@@ -22,7 +22,7 @@
       <FontAwesomeIconView fx:id="iconSalvar" fill="#29a418" glyphName="SAVE" layoutX="210.0" layoutY="131.0" onMouseClicked="#accionGuardar" size="40" />
       <ImageView fitHeight="111.0" fitWidth="179.0" layoutX="570.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imagen/chiquito.png" />
+            <Image url="@../imagen/RitcherChiquito.png" />
          </image>
       </ImageView>
    </children>
