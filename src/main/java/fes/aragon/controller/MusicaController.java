@@ -37,6 +37,7 @@ public class MusicaController implements Initializable {
     private TableView<MusicaCiclica> tblTablamusica;
     private ObservableList<MusicaCiclica> cancionesTabla;
     private Thread hilo;
+    private boolean corriendo=false;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -75,12 +76,20 @@ public class MusicaController implements Initializable {
                             int indice = tblTablamusica.getSelectionModel().getSelectedIndex();
                            System.out.println(tblTablamusica.getSelectionModel().getSelectedIndex());
                            list.get(indice).getHilo().stop();
+                           corriendo = false;
                        });
                        reproducirIcono.setOnMouseClicked((MouseEvent evento)->{
-                        MusicaCiclica musicaCiclica1 = tblTablamusica.getSelectionModel().getSelectedItem();
-                           System.out.println(tblTablamusica.getSelectionModel().getSelectedIndex());
-                        musicaCiclica1.setHilo( hilo = new Thread(musicaCiclica1));
-                       hilo.start();
+
+                           if(!corriendo) {
+                               MusicaCiclica musicaCiclica1 = tblTablamusica.getSelectionModel().getSelectedItem();
+                               System.out.println(tblTablamusica.getSelectionModel().getSelectedIndex());
+                               musicaCiclica1.setHilo(hilo = new Thread(musicaCiclica1));
+                               hilo.start();
+                               corriendo = true;
+                           }
+                           else {
+                               System.out.println("Por favor detenga la reproducción antes de reproducir otra canción");
+                           }
                        });
                        HBox hBox = new HBox(reproducirIcono, detenerIcono);
                        hBox.setStyle("-fx-alignment:center");
