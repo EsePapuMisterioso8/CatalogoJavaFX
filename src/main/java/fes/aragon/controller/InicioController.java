@@ -53,5 +53,6 @@ public class InicioController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
     }
 }
