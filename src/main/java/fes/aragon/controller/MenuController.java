@@ -19,16 +19,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MenuController {
+public class MenuController implements Initializable {
 
     @FXML
     private Pane pneMenu;
-
-    @FXML
-    private ImageView btnJugar;
-
-    @FXML
-    private ImageView btnMusica;
 
     @FXML
     private FontAwesomeIconView icnJuego;
@@ -36,14 +30,13 @@ public class MenuController {
     @FXML
     private FontAwesomeIconView icnMusica;
 
-    //@Override
-    //public void initialize(URL url, ResourceBundle resourceBundle) {
-        //icnJuego.setGlyphStyle("-fx-cursor:hand;");
-        //icnMusica.setGlyphStyle("-fx-cursor:hand;");
-    //}
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        icnJuego.setGlyphStyle("-fx-cursor:hand;");
+        icnMusica.setGlyphStyle("-fx-cursor:hand;");
+    }
     @FXML
-    void accionJuego(MouseEvent event) {
+    void accionIniciarJuego(MouseEvent event) {
         try {
             FXMLLoader modificar = new FXMLLoader(getClass().getResource("/fes/aragon/xml/juego.fxml"));
             Parent parent  = (Parent)modificar.load();
@@ -60,7 +53,7 @@ public class MenuController {
         }
     }
     @FXML
-    void accionMusica(MouseEvent event) {
+    void accionTablaMusica(MouseEvent event) {
         try {
             Parent parent = FXMLLoader.load(getClass().getResource("/fes/aragon/xml/musica.fxml"));
             Scene scene = new Scene(parent);

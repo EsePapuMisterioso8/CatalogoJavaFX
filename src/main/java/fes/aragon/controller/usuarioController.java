@@ -84,9 +84,9 @@ public class usuarioController implements Initializable {
           SerializableImage si = new SerializableImage();
           si.setImage(imagen);
           persona.setImagen(si);
-           SingletonUsuarios.getInstance().getLista().set(indice,persona);
-           Stage stage = (Stage) this.btnGuardarUsuario.getScene().getWindow();
-           stage.close();
+          SingletonUsuarios.getInstance().getLista().set(indice,persona);
+          Stage stage = (Stage) this.btnGuardarUsuario.getScene().getWindow();
+          stage.close();
        }
        this.txtCorreo.clear();
        this.imgImagen.setImage(null);

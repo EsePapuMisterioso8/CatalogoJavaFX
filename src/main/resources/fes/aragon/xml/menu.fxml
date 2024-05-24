@@ -18,17 +18,17 @@
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="279.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" />
-      <FontAwesomeIconView fx:id="icnJuego" layoutX="59.0" layoutY="266.0" opacity="0.0" size="45" wrappingWidth="147.0" />
-      <ImageView fx:id="btnJugar" fitHeight="70.0" fitWidth="165.0" layoutX="50.0" layoutY="220.0" onMouseClicked="#accionJuego" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="70.0" fitWidth="165.0" layoutX="50.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagen/BJugar.png" />
          </image>
       </ImageView>
-      <FontAwesomeIconView fx:id="icnMusica" layoutX="50.0" layoutY="351.0" opacity="0.0" size="45" wrappingWidth="185.0" />
-      <ImageView fx:id="btnMusica" fitHeight="70.0" fitWidth="185.0" layoutX="50.0" layoutY="310.0" onMouseClicked="#accionMusica" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="70.0" fitWidth="185.0" layoutX="50.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagen/BMusica.png" />
          </image>
       </ImageView>
+      <FontAwesomeIconView fx:id="icnJuego" layoutX="59.0" layoutY="266.0" onMouseClicked="#accionIniciarJuego" opacity="0.0" size="45" wrappingWidth="147.0" />
+      <FontAwesomeIconView fx:id="icnMusica" layoutX="50.0" layoutY="351.0" onMouseClicked="#accionTablaMusica" opacity="0.0" size="45" wrappingWidth="185.0" />
    </children>
 </fx:root>
