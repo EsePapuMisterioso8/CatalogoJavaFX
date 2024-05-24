@@ -47,11 +47,13 @@ public class MusicaController implements Initializable {
         MusicaCiclica musicaCiclica2 = new MusicaCiclica("MusicaMenu");
         MusicaCiclica musicaCiclica3 = new MusicaCiclica("MegavsZero");
         MusicaCiclica musicaCiclica4 = new MusicaCiclica("Yuusha");
+        MusicaCiclica musicaCiclica5 = new MusicaCiclica("StarFox");
         ObservableList<MusicaCiclica> list = FXCollections.observableArrayList();
         list.add(musicaCiclica);
         list.add(musicaCiclica2);
         list.add(musicaCiclica3);
         list.add(musicaCiclica4);
+        list.add(musicaCiclica5);
         cancionesTabla = list;
     this.tblTablamusica.setItems(cancionesTabla);
 
@@ -93,7 +95,7 @@ public class MusicaController implements Initializable {
                            else {
                                System.out.println("Detenga la reproducción actual antes de reproducir otra canción");
                            }
-                           cerrarJuego();
+                           //cerrarJuego();
                        });
                        HBox hBox = new HBox(reproducirIcono, detenerIcono);
                        hBox.setStyle("-fx-alignment:center");

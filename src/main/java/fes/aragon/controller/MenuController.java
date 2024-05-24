@@ -1,6 +1,7 @@
 package fes.aragon.controller;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import fes.aragon.modelo.MusicaCiclica;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -26,9 +27,13 @@ public class MenuController implements Initializable {
 
     @FXML
     private FontAwesomeIconView icnMusica;
+    private Thread hiloFondo;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        /*MusicaCiclica musicaCiclica = new MusicaCiclica("MusicaMenu");
+        hiloFondo = new Thread(musicaCiclica);
+        hiloFondo.start();*/
         icnJuego.setGlyphStyle("-fx-cursor:hand;");
         icnMusica.setGlyphStyle("-fx-cursor:hand;");
     }
