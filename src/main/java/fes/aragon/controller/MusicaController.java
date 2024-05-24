@@ -93,6 +93,8 @@ public class MusicaController implements Initializable {
                            else {
                                System.out.println("Detenga la reproducción actual antes de reproducir otra canción");
                            }
+
+
                        });
                        HBox hBox = new HBox(reproducirIcono, detenerIcono);
                        hBox.setStyle("-fx-alignment:center");
