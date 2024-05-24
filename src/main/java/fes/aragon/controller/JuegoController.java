@@ -17,7 +17,6 @@ public class JuegoController {
     private Canvas canvas;
     private Scene escena;
     private GraphicsContext graficos;
-
     private Thread hiloFondo;
     private AnimationTimer tiempo;
     public void ciclo(){
