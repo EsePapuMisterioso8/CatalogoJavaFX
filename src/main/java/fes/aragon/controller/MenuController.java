@@ -32,7 +32,6 @@ public class MenuController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //h
         /*MusicaCiclica musicaCiclica = new MusicaCiclica("MusicaMenu");
         hiloFondo = new Thread(musicaCiclica);
         hiloFondo.start();
