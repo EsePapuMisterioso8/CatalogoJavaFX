@@ -40,6 +40,7 @@ public class Fondo extends ComponentesJuego{
 
     @Override
     public void logicaCalculos() {
+
     y += velocidad;
     yy += velocidad;
     if(y>=400){
@@ -47,6 +48,7 @@ public class Fondo extends ComponentesJuego{
     }if(yy>=400){
         yy = -400;
         }
+
     }
     public Image getImge(){
         return imagen;
