@@ -11,20 +11,20 @@ import java.io.FileNotFoundException;
 
 public class Fondop extends ComponentesJuego{
     private Image imagenUno;
-    private Image imagendos;
-    int yy = 0;
+    //private Image imagendos;
+    //int yy = 0;
     public Fondop(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
         File file =new File(imagen);
         this.imagenUno = new Image(file.toURI().toString());
-        file = new File(imagen);
-        this.imagendos = new Image(file.toURI().toString());
+        //file = new File(imagen);
+        //this.imagendos = new Image(file.toURI().toString());
     }
 
     @Override
     public void pintar(GraphicsContext grafico) {
     grafico.drawImage(imagenUno,x,y);
-    grafico.drawImage(imagendos,x,yy);
+    //grafico.drawImage(imagendos,x,yy);
     }
 
     @Override
