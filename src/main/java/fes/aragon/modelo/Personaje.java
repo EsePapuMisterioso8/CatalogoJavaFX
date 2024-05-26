@@ -73,7 +73,6 @@ public class Personaje extends ComponentesJuego{
                     if(x<SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth()-ancho) {
                     this.x++;
             }
-
             } else if (izquierda) {
                 if(x>0){
                     x--;

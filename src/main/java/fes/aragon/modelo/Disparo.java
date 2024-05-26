@@ -47,13 +47,13 @@ public class Disparo extends ComponentesJuego{
         if(!disparos.isEmpty() && disparos.get(0).getY()<=0){
             disparos.remove(0);
         }
-        //revismoa las colisiones
+        //revisamos las colisiones
         ArrayList<Rectangle> enemigos = new ArrayList<>();
         ArrayList<Rectangle> balas = new ArrayList<>();
         for(Rectangle bala: disparos){
             for(Rectangle rect: SinglentonJuegos.getInstance().getEnemigo().getEnemigo()){
                 if(bala.getBoundsInLocal().intersects(rect.getBoundsInLocal())){
-                    System.out.println("colision");
+                    System.out.println("colisión");
                     EfectosMusica efectosMusica = new EfectosMusica("disparo");
                     Thread hilosEfecto = new Thread(efectosMusica);
                     hilosEfecto.start();
