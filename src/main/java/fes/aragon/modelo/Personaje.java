@@ -16,6 +16,11 @@ public class Personaje extends ComponentesJuego{
     private boolean abajo;
     private int ancho=40;
     private int alto = 60;
+    private boolean salto=false;
+    private int alturaInicial;
+    private int alturaMaxima=2;
+    private int alturaActual;
+    private int velocidadSalto=2;
     public Personaje(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
         try {
@@ -78,7 +83,7 @@ public class Personaje extends ComponentesJuego{
                     x--;
                 }
             } else if (arriba) {
-                if(y>0){
+                if(y>0) {
                     y--;
                 }
             } else if (abajo) {
@@ -86,5 +91,7 @@ public class Personaje extends ComponentesJuego{
                     y++;
                 }
             }
+
+
     }
 }

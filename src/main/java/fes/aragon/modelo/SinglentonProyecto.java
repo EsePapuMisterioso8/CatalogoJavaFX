@@ -7,6 +7,7 @@ public class SinglentonProyecto {
     private Fondop fondop;
     private static SinglentonProyecto singlentonProyecto;
     private ArrayList<ComponentesJuego> elementos;
+    private Plataformas plataformas;
     private SinglentonProyecto(){
         this.iniciar();
     }
@@ -19,10 +20,13 @@ public class SinglentonProyecto {
 
     private void iniciar() {
         fondop = new Fondop(0,0,getClass().getResource("/fes/aragon/imagen/MapaOficial.png").getFile(),3);
-        personaje = new Personaje(20,20,getClass().getResource("/fes/aragon/imagen/ReimuPx.png").getFile(),1);
+        personaje = new Personaje(770,670,getClass().getResource("/fes/aragon/imagen/ReimuPx.png").getFile(),1);
+        plataformas= new Plataformas(489,684,null,1);
         elementos = new ArrayList<>();
         elementos.add(fondop);
         this.elementos.add(personaje);
+        elementos.add(2,plataformas);
+
 
     }
     public ArrayList<ComponentesJuego> getElementos(){
@@ -33,5 +37,8 @@ public class SinglentonProyecto {
     }
     public Fondop getFondop(){
         return fondop;
+    }
+    public Plataformas getPlataformas(){
+        return plataformas;
     }
 }
