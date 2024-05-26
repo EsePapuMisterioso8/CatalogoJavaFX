@@ -18,7 +18,7 @@ public class SinglentonProyecto {
     }
 
     private void iniciar() {
-        fondop = new Fondop(0,0,getClass().getResource("/fes/aragon/imagen/Mapaoficial.png").getFile(),3);
+        fondop = new Fondop(0,0,getClass().getResource("/fes/aragon/imagen/MapaOficial.png").getFile(),3);
         personaje = new Personaje(20,20,getClass().getResource("/fes/aragon/imagen/Nave.jpeg").getFile(),1);
         elementos = new ArrayList<>();
         elementos.add(fondop);

@@ -12,8 +12,7 @@ import java.io.FileNotFoundException;
 public class Fondop extends ComponentesJuego{
     private Image imagenUno;
     private Image imagendos;
-    int yy = -400;
-
+    int yy = 0;
     public Fondop(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
         File file =new File(imagen);
