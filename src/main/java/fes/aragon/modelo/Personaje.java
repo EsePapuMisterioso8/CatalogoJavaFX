@@ -15,7 +15,7 @@ public class Personaje extends ComponentesJuego{
     private boolean arriba;
     private boolean abajo;
     private int ancho=40;
-    private int alto = 40;
+    private int alto = 60;
     public Personaje(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
         try {
