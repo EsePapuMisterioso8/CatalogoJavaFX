@@ -16,7 +16,8 @@ public class Personaje extends ComponentesJuego{
     private boolean abajo;
     private int ancho=40;
     private int alto = 60;
-    private boolean salto=false;
+    private boolean salto;
+    int contador = 0;
     private int alturaInicial;
     private int alturaMaxima=2;
     private int alturaActual;
@@ -51,10 +52,10 @@ public class Personaje extends ComponentesJuego{
                 arriba = false;
                 abajo = false;
                 break;
-            case "UP":
+            case "SPACE":
                 derecha = false;
                 izquierda = false;
-                arriba = true;
+                salto = true;
                 abajo = false;
                 break;
             case "DOWN":
@@ -82,16 +83,22 @@ public class Personaje extends ComponentesJuego{
                 if(x>0){
                     x--;
                 }
-            } else if (arriba) {
-                if(y>0) {
+            } else if (salto) {
+                System.out.println(salto);
+                if(contador <= 30) {
                     y--;
-                }
-            } else if (abajo) {
-                if (y<SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight()-alto){
-                    y++;
+                    contador++;
+                    //System.out.println(salto);
+                    if(contador==29){
+                        salto=false;
+                    }
+                    System.out.println(salto);
+                } else if(salto==false) {
+                if (contador <= 30){
+                        y++;
+                        contador--;
+                    }
                 }
             }
-
-
     }
 }

@@ -56,6 +56,7 @@ public class PruebaController {
             public void handle(MouseEvent event) {
                 SinglentonPrueba.getInstance().getFondop().raton(event);
             }
+
         });
     }
 
@@ -81,17 +82,13 @@ public class PruebaController {
         for (ComponentesJuego componentesJuego: SinglentonPrueba.getInstance().getElementos()){
             componentesJuego.pintar(graficos);
         }
-
     }
-
     private void cerrarJuego() {
     }
-
     private void componentesIniciar() {
         graficos = canvasPrueba.getGraphicsContext2D();
         SinglentonPrueba.getInstance();
     }
-
     private void calculosLogicos(){
         for(ComponentesJuego componentesJuego:SinglentonPrueba.getInstance().getElementos()){
             componentesJuego.logicaCalculos();

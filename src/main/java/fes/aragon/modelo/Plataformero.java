@@ -7,6 +7,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Plataformero extends ComponentesJuego{
@@ -14,7 +16,7 @@ public class Plataformero extends ComponentesJuego{
     private ArrayList<Rectangle> plataformas = new ArrayList<>();
     public Plataformero(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
-        /*
+
         try {
             FileInputStream fi = new FileInputStream(imagen);
             imagenes = new Image(fi);
@@ -22,7 +24,7 @@ public class Plataformero extends ComponentesJuego{
             throw new RuntimeException(e);
         }
 
-         */
+
         int xx=13;
         int yy=640;
         int salto=0;
@@ -131,6 +133,7 @@ public class Plataformero extends ComponentesJuego{
         //grafico.strokeRect(x,y,5,5);
         for(Rectangle rectangle: plataformas){
             grafico.fillRect(rectangle.getX(), rectangle.getY(), rectangle.getWidth(),rectangle.getHeight());
+            grafico.drawImage(imagenes,rectangle.getX(),rectangle.getY(), rectangle.getWidth(),rectangle.getHeight());
         }
     }
 
