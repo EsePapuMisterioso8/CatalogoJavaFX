@@ -132,7 +132,6 @@ public class Plataformero extends ComponentesJuego{
         for(Rectangle rectangle: plataformas){
             grafico.fillRect(rectangle.getX(), rectangle.getY(), rectangle.getWidth(),rectangle.getHeight());
         }
-
     }
 
     @Override
