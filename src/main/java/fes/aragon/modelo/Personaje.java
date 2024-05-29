@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class Personaje extends ComponentesJuego{
+    private boolean cara;
     private Image imagen;
     private boolean derecha;
     private boolean izquierda;
@@ -38,9 +39,11 @@ public class Personaje extends ComponentesJuego{
     }
     @Override
     public void teclado(KeyEvent evento, boolean presion) {
+
         switch (evento.getCode().toString()){
             case "RIGHT":
                 derecha = true;
+                cara=true;
                 izquierda = false;
                 arriba = false;
                 abajo = false;
@@ -48,6 +51,7 @@ public class Personaje extends ComponentesJuego{
             case "LEFT":
                 derecha = false;
                 izquierda = true;
+                cara=false;
                 arriba = false;
                 abajo = false;
                 break;
@@ -76,6 +80,8 @@ public class Personaje extends ComponentesJuego{
 
     @Override
     public void logicaCalculos() {
+        //System.out.println(izquierda);
+        System.out.println(cara);
             if(derecha){
                     if(x<SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth()-ancho) {
                     this.x++;
@@ -87,12 +93,18 @@ public class Personaje extends ComponentesJuego{
             } else if (salto) {
                 if (contador <= 27) {
                     y--;
-                    if(x<=SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth()-ancho) {
-                        x += 3;
+                    if(x<=SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth()-ancho&& cara==true) {
+                            x += 3;
+
+                    }else {
+                        if (x > 0 ) {
+                            x-=3;
+
+                        }
                     }
+                    //System.out.println(SinglentonProyecto.getInstance().getPersonaje().getDerecha());
+                    System.out.println(SinglentonProyecto.getInstance().getPersonaje().izquierda);
                     contador++;
-
-
                     if (contador == 27) {
                         salto = false;
                     }
@@ -104,6 +116,20 @@ public class Personaje extends ComponentesJuego{
                 }
             }
 
-
+           }
+           public boolean getDerecha (){
+            return derecha;
+           }
+           public void setDerecha(boolean derecha){
+            this.derecha= derecha;
+           }
+           public  boolean getIzquierda(){
+            return  izquierda;
+           }
+           public void setIzquierda(boolean izquierda){
+            this.izquierda = izquierda;
+           }
     }
-}
+
+
+
