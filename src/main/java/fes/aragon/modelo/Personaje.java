@@ -85,20 +85,21 @@ public class Personaje extends ComponentesJuego{
                 }
             } else if (salto) {
                 System.out.println(salto);
-                if(contador <= 30) {
+                if(contador <= 25) {
                     y--;
                     contador++;
                     //System.out.println(salto);
-                    if(contador==29){
+                    if(contador==24){
                         salto=false;
                     }
                     System.out.println(salto);
                 } else if(salto==false) {
-                if (contador <= 30){
+                if (contador <= 25){
                         y++;
                         contador--;
                     }
                 }
+                ///WAZAAAAAAAA
             }
     }
 }
