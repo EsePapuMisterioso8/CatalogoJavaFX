@@ -130,7 +130,6 @@ public class Plataformero extends ComponentesJuego{
     }
     @Override
     public void pintar(GraphicsContext grafico) {
-        //grafico.strokeRect(x,y,5,5);
         for(Rectangle rectangle: plataformas){
             grafico.fillRect(rectangle.getX(), rectangle.getY(), rectangle.getWidth(),rectangle.getHeight());
             grafico.drawImage(imagenes,rectangle.getX(),rectangle.getY(), rectangle.getWidth(),rectangle.getHeight());

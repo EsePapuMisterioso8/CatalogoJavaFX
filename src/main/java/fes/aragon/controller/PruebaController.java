@@ -59,7 +59,6 @@ public class PruebaController {
 
         });
     }
-
     private void eventosTeclado() {
         escena.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -73,9 +72,10 @@ public class PruebaController {
             public void handle(KeyEvent event) {
                 System.out.println("soltado");
                 SinglentonPrueba.getInstance().getPersonaje().teclado(event,false);
-
             }
         });
+
+
     }
 
     private void pintar() {

@@ -16,7 +16,7 @@ public class Personaje extends ComponentesJuego{
     private boolean abajo;
     private int ancho=40;
     private int alto = 60;
-    private boolean salto = false;
+    private boolean salto;
     int contador = 0;
     private int alturaInicial;
     private int alturaMaxima=2;
@@ -36,7 +36,6 @@ public class Personaje extends ComponentesJuego{
     public void pintar(GraphicsContext grafico) {
     grafico.drawImage(imagen,x,y,ancho,alto);
     }
-
     @Override
     public void teclado(KeyEvent evento, boolean presion) {
         switch (evento.getCode().toString()){
