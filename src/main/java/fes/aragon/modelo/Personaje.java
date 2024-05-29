@@ -16,7 +16,7 @@ public class Personaje extends ComponentesJuego{
     private boolean abajo;
     private int ancho=40;
     private int alto = 60;
-    private boolean salto;
+    private boolean salto = false;
     int contador = 0;
     private int alturaInicial;
     private int alturaMaxima=2;
@@ -58,12 +58,14 @@ public class Personaje extends ComponentesJuego{
                 salto = true;
                 abajo = false;
                 break;
-            case "DOWN":
+            /*case "DOWN":
                 derecha = false;
                 izquierda = false;
                 arriba = false;
                 abajo = true;
                 break;
+
+             */
         }
 
     }
@@ -84,22 +86,18 @@ public class Personaje extends ComponentesJuego{
                     x--;
                 }
             } else if (salto) {
-                System.out.println(salto);
-                if(contador <= 25) {
+                if (contador <= 25) {
                     y--;
                     contador++;
-                    //System.out.println(salto);
-                    if(contador==24){
-                        salto=false;
-                    }
-                    System.out.println(salto);
-                } else if(salto==false) {
-                if (contador <= 25){
-                        y++;
-                        contador--;
+                    if (contador == 25) {
+                        salto = false;
                     }
                 }
-                ///WAZAAAAAAAA
+            } else {
+                if (contador > 0) {
+                    y++;
+                    contador--;
+                }
             }
     }
 }

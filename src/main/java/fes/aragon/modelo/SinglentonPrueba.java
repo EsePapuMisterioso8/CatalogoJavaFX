@@ -20,7 +20,7 @@ public class SinglentonPrueba {
 
     private void iniciar() {
         fondop = new Fondop(0,0,getClass().getResource("/fes/aragon/imagen/MapaJx.jpeg").getFile(),3);
-        personaje = new Personaje(770,670,getClass().getResource("/fes/aragon/imagen/ReimuPx.png").getFile(),1);
+        personaje = new Personaje(25,580,getClass().getResource("/fes/aragon/imagen/ReimuPx.png").getFile(),1);
         plataform = new Plataformero(13,640,getClass().getResource("/fes/aragon/imagen/Gotas.png").getFile(),1);
         elementos = new ArrayList<>();
         elementos.add(fondop);
