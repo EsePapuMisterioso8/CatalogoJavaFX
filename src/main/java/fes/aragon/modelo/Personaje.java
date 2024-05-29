@@ -88,8 +88,12 @@ public class Personaje extends ComponentesJuego{
             } else if (salto) {
                 if (contador <= 25) {
                     y--;
-                    x+=3;
+                    if(x<=SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth()-ancho) {
+                        x += 3;
+                    }
                     contador++;
+
+
                     if (contador == 25) {
                         salto = false;
                     }
@@ -100,5 +104,7 @@ public class Personaje extends ComponentesJuego{
                     contador--;
                 }
             }
+
+
     }
 }
