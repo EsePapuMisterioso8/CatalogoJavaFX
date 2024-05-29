@@ -88,7 +88,7 @@ public class Personaje extends ComponentesJuego{
             } else if (salto) {
                 if (contador <= 25) {
                     y--;
-                    x++;
+                    x+=3;
                     contador++;
                     if (contador == 25) {
                         salto = false;
