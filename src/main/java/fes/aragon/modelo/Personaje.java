@@ -4,9 +4,11 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Rectangle;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class Personaje extends ComponentesJuego{
     private boolean cara;
@@ -82,53 +84,41 @@ public class Personaje extends ComponentesJuego{
     public void logicaCalculos() {
         //System.out.println(izquierda);
         System.out.println(cara);
-            if(derecha){
-                    if(x<SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth()-ancho) {
-                    this.x++;
+        if (derecha) {
+            if (x < SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho) {
+                this.x++;
             }
-            } else if (izquierda) {
-                if(x>0){
-                    x--;
-                }
-            } else if (salto) {
-                if (contador <= 27) {
-                    y--;
-                    if(x<=SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth()-ancho&& cara==true) {
-                            x += 3;
+        } else if (izquierda) {
+            if (x > 0) {
+                x--;
+            }
+        } else if (salto) {
+            if (contador <= 27) {
+                y--;
+                if (x <= SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho && cara == true) {
+                    x += 3;
 
-                    }else {
-                        if (x > 0 ) {
-                            x-=3;
+                } else {
+                    if (x > 0) {
+                        x -= 3;
 
-                        }
-                    }
-                    //System.out.println(SinglentonProyecto.getInstance().getPersonaje().getDerecha());
-                    System.out.println(SinglentonProyecto.getInstance().getPersonaje().izquierda);
-                    contador++;
-                    if (contador == 27) {
-                        salto = false;
                     }
                 }
-            } else {
-                if (contador > 0) {
-                    y++;
-                    contador--;
+                //System.out.println(SinglentonProyecto.getInstance().getPersonaje().getDerecha());
+                System.out.println(SinglentonProyecto.getInstance().getPersonaje().izquierda);
+                contador++;
+                if (contador == 27) {
+                    salto = false;
                 }
             }
+        } else {
+            if (contador > 0) {
+                y++;
+                contador--;
+            }
+        }
 
-           }
-           public boolean getDerecha (){
-            return derecha;
-           }
-           public void setDerecha(boolean derecha){
-            this.derecha= derecha;
-           }
-           public  boolean getIzquierda(){
-            return  izquierda;
-           }
-           public void setIzquierda(boolean izquierda){
-            this.izquierda = izquierda;
-           }
+    }
     }
 
 

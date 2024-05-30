@@ -150,4 +150,7 @@ public class Plataformero extends ComponentesJuego{
     public void logicaCalculos() {
 
     }
+    public ArrayList<Rectangle> getPlataforma(){
+        return plataformas;
+    }
 }

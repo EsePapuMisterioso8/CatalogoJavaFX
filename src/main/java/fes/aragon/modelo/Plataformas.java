@@ -137,4 +137,5 @@ public class Plataformas extends ComponentesJuego{
     public void logicaCalculos() {
 
     }
+
 }
