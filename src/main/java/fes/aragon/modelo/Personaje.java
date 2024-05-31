@@ -101,11 +101,11 @@ public class Personaje extends ComponentesJuego{
                 y--;
 
                 if (x <= SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho && cara == true) {
-                    x += 3;
+                    x += 2;
 
                 } else {
                     if (x > 0) {
-                        x -= 3;
+                        x -= 2;
 
                     }
                 }
@@ -117,10 +117,13 @@ public class Personaje extends ComponentesJuego{
                 }
             }
         } else {
-            if (contador > 0) {
-                y++;
-                contador--;
-            }
+
+               if (y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
+                       y++;
+                       contador=0;
+                }
+
+
         }
         ArrayList platafo = new ArrayList<>();
                 ArrayList personaje  = new ArrayList<>();
@@ -130,7 +133,11 @@ public class Personaje extends ComponentesJuego{
                     System.out.println("colision");
                     System.out.println(y);
                     if(y<=forma.getY()){
-                        System.out.println("arriba de la plataforma");
+                         System.out.println("arriba de la plataforma");
+                        if(x>forma.getWidth()-ancho || x<forma.getWidth()-ancho) {
+                            y = (int) (forma.getY() - alto);
+                        }
+
                     }
                 }
 
