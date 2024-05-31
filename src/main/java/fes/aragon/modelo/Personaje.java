@@ -11,7 +11,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Personaje extends ComponentesJuego{
-    private  ArrayList<Rectangle> rectangle;
+    private  Rectangle rectangle;
     private boolean cara;
     private Image imagen;
     private boolean derecha;
@@ -35,16 +35,12 @@ public class Personaje extends ComponentesJuego{
             throw new RuntimeException(e);
 
         }
-        rectangle= new ArrayList<>();
-         Rectangle rectangulo= new Rectangle(x,y,40,60);
-         rectangle.add(rectangulo);
+         rectangle = new Rectangle(x,y,40,60);
     }
 
     @Override
     public void pintar(GraphicsContext grafico) {
-        for(Rectangle rectangulos:rectangle){
-            grafico.strokeRect(SinglentonPrueba.getInstance().getPersonaje().x,SinglentonPrueba.getInstance().getPersonaje().y,40,60);
-        }
+        grafico.strokeRect(SinglentonPrueba.getInstance().getPersonaje().x,SinglentonPrueba.getInstance().getPersonaje().y,40,60);
     grafico.drawImage(imagen,x,y,ancho,alto);
     }
     @Override
@@ -101,8 +97,9 @@ public class Personaje extends ComponentesJuego{
                 x--;
             }
         } else if (salto) {
-            if (contador <= 27) {
+            if (contador <= 30) {
                 y--;
+
                 if (x <= SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho && cara == true) {
                     x += 3;
 
@@ -115,7 +112,7 @@ public class Personaje extends ComponentesJuego{
                 //System.out.println(SinglentonProyecto.getInstance().getPersonaje().getDerecha());
                 System.out.println(SinglentonProyecto.getInstance().getPersonaje().izquierda);
                 contador++;
-                if (contador == 27) {
+                if (contador == 30) {
                     salto = false;
                 }
             }
@@ -126,16 +123,17 @@ public class Personaje extends ComponentesJuego{
             }
         }
         ArrayList platafo = new ArrayList<>();
-        ArrayList personaje  = new ArrayList<>();
-        for(Rectangle persona : rectangle){
-            for (Rectangle forma: SinglentonPrueba.getInstance().getPlataformas().getPlataforma()){
-                if(persona.getBoundsInLocal().intersects(forma.getBoundsInLocal())){
-                    System.out.println("colision");
-                    if(persona.getY()>=forma.getY()){
+                ArrayList personaje  = new ArrayList<>();
 
+                 for (Rectangle forma: SinglentonPrueba.getInstance().getPlataformas().getPlataforma()){
+                if(forma.getBoundsInLocal().intersects(SinglentonPrueba.getInstance().getPersonaje().x,SinglentonPrueba.getInstance().getPersonaje().y,40,60)){
+                    System.out.println("colision");
+                    System.out.println(y);
+                    if(y<=forma.getY()){
+                        System.out.println("arriba de la plataforma");
                     }
                 }
-            }
+
         }
     }
     }
