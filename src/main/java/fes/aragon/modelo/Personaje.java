@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Personaje extends ComponentesJuego{
+    private  ArrayList<Rectangle> rectangle;
     private boolean cara;
     private Image imagen;
     private boolean derecha;
@@ -32,11 +33,18 @@ public class Personaje extends ComponentesJuego{
             this.imagen = new Image(fi);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
+
         }
+        rectangle= new ArrayList<>();
+         Rectangle rectangulo= new Rectangle(x,y,40,60);
+         rectangle.add(rectangulo);
     }
 
     @Override
     public void pintar(GraphicsContext grafico) {
+        for(Rectangle rectangulos:rectangle){
+            grafico.strokeRect(SinglentonPrueba.getInstance().getPersonaje().x,SinglentonPrueba.getInstance().getPersonaje().y,40,60);
+        }
     grafico.drawImage(imagen,x,y,ancho,alto);
     }
     @Override
@@ -117,7 +125,18 @@ public class Personaje extends ComponentesJuego{
                 contador--;
             }
         }
+        ArrayList platafo = new ArrayList<>();
+        ArrayList personaje  = new ArrayList<>();
+        for(Rectangle persona : rectangle){
+            for (Rectangle forma: SinglentonPrueba.getInstance().getPlataformas().getPlataforma()){
+                if(persona.getBoundsInLocal().intersects(forma.getBoundsInLocal())){
+                    System.out.println("colision");
+                    if(persona.getY()>=forma.getY()){
 
+                    }
+                }
+            }
+        }
     }
     }
 
