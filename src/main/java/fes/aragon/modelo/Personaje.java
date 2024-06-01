@@ -127,7 +127,6 @@ public class Personaje extends ComponentesJuego{
 
         }
         ArrayList<Rectangle> platafo = new ArrayList<>();
-                ArrayList personaje  = new ArrayList<>();
 
                  for (Rectangle forma: SinglentonPrueba.getInstance().getPlataformas().getPlataforma()) {
                      int xx = 0;
@@ -140,14 +139,21 @@ public class Personaje extends ComponentesJuego{
                      } else {
                          for (Rectangle formas : platafo) {
                              xx = (int) (formas.getX() + formas.getWidth());
-                             System.out.println(xx);
-                             System.out.println(x);
+                             //System.out.println(xx);
+                             //System.out.println(x);
                              if (x<xx) {
-                             }else {
+                             }else{
                                  if(y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
                                      y+=3;
-                                     derecha=false;
-                                     izquierda=false;
+                                 }
+                             }
+                             System.out.println(x);
+                             System.out.println(formas.getX());
+                             if(x+ancho>formas.getX()){
+                                 System.out.println("nice");
+                             }else{
+                                 if(y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
+                                     y+=3;
                                  }
                              }
                          }
