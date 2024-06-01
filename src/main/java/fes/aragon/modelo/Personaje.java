@@ -11,7 +11,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Personaje extends ComponentesJuego{
-    private  Rectangle rectangle;
+    private boolean colision;
     private boolean cara;
     private Image imagen;
     private boolean derecha;
@@ -35,12 +35,12 @@ public class Personaje extends ComponentesJuego{
             throw new RuntimeException(e);
 
         }
-         rectangle = new Rectangle(x,y,40,60);
+
     }
 
     @Override
     public void pintar(GraphicsContext grafico) {
-        grafico.strokeRect(SinglentonPrueba.getInstance().getPersonaje().x,SinglentonPrueba.getInstance().getPersonaje().y,40,60);
+
     grafico.drawImage(imagen,x,y,ancho,alto);
     }
     @Override
@@ -89,6 +89,7 @@ public class Personaje extends ComponentesJuego{
         //System.out.println(izquierda);
         System.out.println(cara);
         if (derecha) {
+
             if (x < SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho) {
                 this.x++;
             }
@@ -101,19 +102,19 @@ public class Personaje extends ComponentesJuego{
                 y--;
 
                 if (x <= SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho && cara == true) {
-                    x += 2;
+                    x += 3;
+
 
                 } else {
                     if (x > 0) {
-                        x -= 2;
+                        x -= 3;
 
                     }
                 }
-                //System.out.println(SinglentonProyecto.getInstance().getPersonaje().getDerecha());
-                System.out.println(SinglentonProyecto.getInstance().getPersonaje().izquierda);
                 contador++;
                 if (contador == 30) {
                     salto = false;
+
                 }
             }
         } else {
@@ -125,23 +126,37 @@ public class Personaje extends ComponentesJuego{
 
 
         }
-        ArrayList platafo = new ArrayList<>();
+        ArrayList<Rectangle> platafo = new ArrayList<>();
                 ArrayList personaje  = new ArrayList<>();
 
-                 for (Rectangle forma: SinglentonPrueba.getInstance().getPlataformas().getPlataforma()){
-                if(forma.getBoundsInLocal().intersects(SinglentonPrueba.getInstance().getPersonaje().x,SinglentonPrueba.getInstance().getPersonaje().y,40,60)){
-                    System.out.println("colision");
-                    System.out.println(y);
-                    if(y<=forma.getY()){
-                         System.out.println("arriba de la plataforma");
-                        if(x>forma.getWidth()-ancho || x<forma.getWidth()-ancho) {
-                            y = (int) (forma.getY() - alto);
-                        }
+                 for (Rectangle forma: SinglentonPrueba.getInstance().getPlataformas().getPlataforma()) {
+                     int xx = 0;
+                     if (forma.getBoundsInLocal().intersects(SinglentonPrueba.getInstance().getPersonaje().x, SinglentonPrueba.getInstance().getPersonaje().y, 40, 60)) {
+                          System.out.println("colision");
+                         platafo.add(forma);
+                         if (y <= forma.getY()) {
+                             y = (int) (forma.getY() - alto);
+                         }
+                     } else {
+                         for (Rectangle formas : platafo) {
+                             xx = (int) (formas.getX() + formas.getWidth());
+                             System.out.println(xx);
+                             System.out.println(x);
+                             if (x<xx) {
+                             }else {
+                                 if(y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
+                                     y+=3;
+                                     derecha=false;
+                                     izquierda=false;
+                                 }
+                             }
+                         }
+                     }
 
-                    }
-                }
+                 }
 
-        }
+
+
     }
     }
 
