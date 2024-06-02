@@ -1,13 +1,21 @@
 package fes.aragon.modelo;
 
+import fes.aragon.controller.MenuController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Personaje extends ComponentesJuego{
@@ -87,7 +95,7 @@ public class Personaje extends ComponentesJuego{
     @Override
     public void logicaCalculos() {
         //System.out.println(izquierda);
-        System.out.println(cara);
+        //System.out.println(cara);
         if (derecha) {
 
             if (x < SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho) {
@@ -118,8 +126,10 @@ public class Personaje extends ComponentesJuego{
                 }
             }
         } else {
-
+System.out.println(derecha);
+                   System.out.println(izquierda);
                if (y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
+
                        y++;
                        contador=0;
                 }
@@ -130,8 +140,9 @@ public class Personaje extends ComponentesJuego{
 
                  for (Rectangle forma: SinglentonPrueba.getInstance().getPlataformas().getPlataforma()) {
                      int xx = 0;
-                     if (forma.getBoundsInLocal().intersects(SinglentonPrueba.getInstance().getPersonaje().x, SinglentonPrueba.getInstance().getPersonaje().y, 40, 60)) {
-                          System.out.println("colision");
+                     if (forma.getBoundsInLocal().intersects(SinglentonPrueba.getInstance().getPersonaje().x, SinglentonPrueba.getInstance().getPersonaje().y, 40, 60)
+                     ) {
+                          //System.out.println("colision");
                          platafo.add(forma);
                          if (y <= forma.getY()) {
                              y = (int) (forma.getY() - alto);
@@ -150,10 +161,11 @@ public class Personaje extends ComponentesJuego{
                              System.out.println(x);
                              System.out.println(formas.getX());
                              if(x+ancho>formas.getX()){
-                                 System.out.println("nice");
+                                 //System.out.println("nice");
                              }else{
                                  if(y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
-                                     y+=3;
+                                     y+=3
+                                     ;
                                  }
                              }
                          }
@@ -161,7 +173,19 @@ public class Personaje extends ComponentesJuego{
 
                  }
 
-
+                 if(x ==746){
+                     try {
+                        Parent parent = FXMLLoader.load(getClass().getResource("/fes/aragon/xml/nivelcompletado.fxml"));
+                        Scene scene = new Scene(parent);
+                        Stage stage = new Stage();
+                        stage.setScene(scene);
+                        stage.initStyle(StageStyle.UTILITY);
+                        stage.initModality(Modality.APPLICATION_MODAL);
+                        stage.show();
+                     } catch (IOException ex) {
+                         throw new RuntimeException(ex);
+                     }
+                 }
 
     }
     }

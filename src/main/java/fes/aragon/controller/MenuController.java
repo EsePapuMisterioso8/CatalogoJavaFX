@@ -5,6 +5,7 @@ import fes.aragon.modelo.MusicaCiclica;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
@@ -41,6 +42,7 @@ public class MenuController implements Initializable {
     }
     @FXML
     void accionIniciarJuego(MouseEvent event) {
+
         try {
             FXMLLoader modificar = new FXMLLoader(getClass().getResource("/fes/aragon/xml/pruebaJx.fxml"));
             Parent parent  = (Parent)modificar.load();
@@ -55,10 +57,12 @@ public class MenuController implements Initializable {
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
+
     }
     @FXML
     void accionTablaMusica(MouseEvent event) {
         try {
+
             Parent parent = FXMLLoader.load(getClass().getResource("/fes/aragon/xml/musica.fxml"));
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
@@ -70,4 +74,5 @@ public class MenuController implements Initializable {
             throw new RuntimeException(ex);
         }
     }
+
 }
