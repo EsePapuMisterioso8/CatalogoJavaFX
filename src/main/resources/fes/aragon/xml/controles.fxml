@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="556.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fes.aragon.controller.ControlesController">
+   <children>
+      <Label layoutX="52.0" layoutY="58.0" text="Forma de Juego:">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="108.0" text="Salta a travez de las platafomas para sobrevivir :)">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="156.0" text="Sortea a los enemigos y llega a la cima">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="593.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagen/Cima.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="52.0" layoutY="256.0" text="Controles:">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="72.0" fitWidth="78.0" layoutX="534.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagen/Derecha.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="52.0" layoutY="300.0" text="Te permite mover a tu personaje hacia la derecha ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="381.0" text="Movera a tu personaje hacia el lado izquierdo">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="462.0" text="Te permite saltar, tomando en cuenta tu vista ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="72.0" fitWidth="72.0" layoutX="534.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagen/Izquierda.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="68.0" fitWidth="72.0" layoutX="534.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagen/Espacio.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="52.0" layoutY="512.0" text="Nota: Por favor espera a que el salto se lleva a cabo correctacmente para evitar errores ;.)" />
+   </children>
+</Pane>

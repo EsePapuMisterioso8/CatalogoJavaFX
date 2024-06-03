@@ -2,12 +2,14 @@ package fes.aragon.controller;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import fes.aragon.modelo.MusicaCiclica;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
@@ -30,6 +32,23 @@ public class MenuController implements Initializable {
     private FontAwesomeIconView icnMusica;
 
     private Thread hiloFondo;
+    @FXML
+    private Button btnControles;
+     @FXML
+    void accionControles(ActionEvent event) {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fes/aragon/xml/controles.fxml"));
+       try {
+           Parent parent = (Parent)fxmlLoader.load();
+           Scene scene = new Scene(parent);
+           Stage stage = new Stage();
+           stage.setScene(scene);
+           stage.initStyle(StageStyle.UTILITY);
+           stage.initModality(Modality.APPLICATION_MODAL);
+           stage.show();
+       } catch (IOException e) {
+           throw new RuntimeException(e);
+       }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
