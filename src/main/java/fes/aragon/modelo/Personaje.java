@@ -94,8 +94,6 @@ public class Personaje extends ComponentesJuego{
 
     @Override
     public void logicaCalculos() {
-        //System.out.println(izquierda);
-        //System.out.println(cara);
         if (derecha) {
 
             if (x < SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho) {
@@ -106,30 +104,30 @@ public class Personaje extends ComponentesJuego{
                 x--;
             }
         } else if (salto) {
-            if (contador <= 30) {
+            if (contador <= 50) {
                 y--;
 
                 if (x <= SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho && cara == true) {
-                    x += 3;
+                    x += 2;
 
 
                 } else {
                     if (x > 0) {
-                        x -= 3;
+                        x -= 2;
 
                     }
                 }
                 contador++;
-                if (contador == 30) {
+                if (contador == 50) {
                     salto = false;
 
                 }
             }
         } else {
-System.out.println(derecha);
-                   System.out.println(izquierda);
-               if (y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
 
+               if (y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
+                  // System.out.println(derecha+ "derecha");
+                   //System.out.println(izquierda+ "izquierda");
                        y++;
                        contador=0;
                 }
@@ -140,28 +138,28 @@ System.out.println(derecha);
 
                  for (Rectangle forma: SinglentonPrueba.getInstance().getPlataformas().getPlataforma()) {
                      int xx = 0;
-                     if (forma.getBoundsInLocal().intersects(SinglentonPrueba.getInstance().getPersonaje().x, SinglentonPrueba.getInstance().getPersonaje().y, 40, 60)
-                     ) {
-                          //System.out.println("colision");
-                         platafo.add(forma);
-                         if (y <= forma.getY()) {
-                             y = (int) (forma.getY() - alto);
+
+                     if(SinglentonPrueba.getInstance().getPersonaje().y-ancho<=forma.getY()-forma.getHeight()) {
+                         if (forma.getBoundsInLocal().intersects(SinglentonPrueba.getInstance().getPersonaje().x, SinglentonPrueba.getInstance().getPersonaje().y, 40, 60)
+                         ) {
+                             //System.out.println("colision");
+                             platafo.add(forma);
+                             if (y <= forma.getY()) {
+                                 y = (int) (forma.getY() - alto);
+                             }
                          }
-                     } else {
+                     }else {
                          for (Rectangle formas : platafo) {
                              xx = (int) (formas.getX() + formas.getWidth());
-                             //System.out.println(xx);
-                             //System.out.println(x);
                              if (x<xx) {
                              }else{
                                  if(y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
                                      y+=3;
                                  }
                              }
-                             System.out.println(x);
-                             System.out.println(formas.getX());
+
                              if(x+ancho>formas.getX()){
-                                 //System.out.println("nice");
+
                              }else{
                                  if(y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
                                      y+=3
@@ -172,7 +170,7 @@ System.out.println(derecha);
                      }
 
                  }
-
+/**
                  if(x ==746){
                      try {
                         Parent parent = FXMLLoader.load(getClass().getResource("/fes/aragon/xml/nivelcompletado.fxml"));
@@ -180,12 +178,14 @@ System.out.println(derecha);
                         Stage stage = new Stage();
                         stage.setScene(scene);
                         stage.initStyle(StageStyle.UTILITY);
+                        stage.setAlwaysOnTop(true);
                         stage.initModality(Modality.APPLICATION_MODAL);
                         stage.show();
                      } catch (IOException ex) {
                          throw new RuntimeException(ex);
                      }
                  }
+*/
 
     }
     }

@@ -8,6 +8,8 @@ public class SinglentonPrueba {
     private static SinglentonPrueba singlentonPrueba;
     private ArrayList<ComponentesJuego> elementos;
     private Plataformero plataform;
+    private Enemigop enemigop;
+    private Disparop disparop;
     private SinglentonPrueba(){
         this.iniciar();
     }
@@ -21,10 +23,14 @@ public class SinglentonPrueba {
     private void iniciar() {
         fondop = new Fondop(0,0,getClass().getResource("/fes/aragon/imagen/MapaJx.jpeg").getFile(),3);
         personaje = new Personaje(25,580,getClass().getResource("/fes/aragon/imagen/ReimuPx.png").getFile(),1);
+        enemigop = new Enemigop(586,385,null,1);
+        disparop = new Disparop(0,0,null,1);
         plataform = new Plataformero(13,640,getClass().getResource("/fes/aragon/imagen/Gotas.png").getFile(),1);
         elementos = new ArrayList<>();
         elementos.add(fondop);
         elementos.add(personaje);
+        elementos.add(enemigop);
+        elementos.add(disparop);
         elementos.add(plataform);
     }
     public ArrayList<ComponentesJuego> getElementos(){
@@ -38,5 +44,11 @@ public class SinglentonPrueba {
     }
     public Plataformero getPlataformas(){
         return plataform;
+    }
+    public Enemigop getEnemigop(){
+        return enemigop;
+    }
+    public Disparop getDisparop(){
+        return disparop;
     }
 }
