@@ -154,7 +154,7 @@ public class Personaje extends ComponentesJuego{
                              if (x<xx) {
                              }else{
                                  if(y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
-                                     y+=3;
+                                     y= (int) (SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto);
                                  }
                              }
 
@@ -162,7 +162,7 @@ public class Personaje extends ComponentesJuego{
 
                              }else{
                                  if(y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
-                                     y+=3
+                                     y=(int) (SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto);
                                      ;
                                  }
                              }
@@ -170,7 +170,7 @@ public class Personaje extends ComponentesJuego{
                      }
 
                  }
-/**
+                /**
                  if(x ==746){
                      try {
                         Parent parent = FXMLLoader.load(getClass().getResource("/fes/aragon/xml/nivelcompletado.fxml"));
@@ -178,14 +178,16 @@ public class Personaje extends ComponentesJuego{
                         Stage stage = new Stage();
                         stage.setScene(scene);
                         stage.initStyle(StageStyle.UTILITY);
-                        stage.setAlwaysOnTop(true);
+                        //
+                         // stage.setAlwaysOnTop(true);
                         stage.initModality(Modality.APPLICATION_MODAL);
                         stage.show();
                      } catch (IOException ex) {
                          throw new RuntimeException(ex);
                      }
                  }
-*/
+                 */
+
 
     }
     }

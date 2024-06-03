@@ -2,6 +2,7 @@ package fes.aragon.controller;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import fes.aragon.modelo.MusicaCiclica;
+import fes.aragon.modelo.SinglentonPrueba;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -88,10 +89,12 @@ public class MenuController implements Initializable {
             stage.setScene(scene);
             stage.initStyle(StageStyle.UTILITY);
             stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setAlwaysOnTop(true);
             stage.show();
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
     }
+
 
 }

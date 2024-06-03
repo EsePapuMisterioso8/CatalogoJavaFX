@@ -80,20 +80,20 @@ public class Plataformero extends ComponentesJuego{
                     plataforma = new Rectangle(48,405,45,19);
                     plataformas.add(plataforma);
                     break;
-                case 13:
-                    plataforma = new Rectangle(1,378,29,19);
-                    plataformas.add(plataforma);
-                    break;
-                case 14:
-                    plataforma = new Rectangle(71,358,23,10);
-                    plataformas.add(plataforma);
-                    break;
-                case 15:
-                    plataforma = new Rectangle(134,343,23,10);
-                    plataformas.add(plataforma);
-                    break;
+                //case 13:
+                  //  plataforma = new Rectangle(1,378,29,19);
+                    //plataformas.add(plataforma);
+                    //break;
+                //case 14:
+                  //  plataforma = new Rectangle(71,358,23,10);
+                   // plataformas.add(plataforma);
+                    //break;
+                //case 15:
+                  //  plataforma = new Rectangle(134,343,23,10);
+                    //plataformas.add(plataforma);
+                    //break;
                 case 16:
-                    plataforma = new Rectangle(221,366,23,10);
+                    plataforma = new Rectangle(160,350,110,10);
                     plataformas.add(plataforma);
                     break;
                 //case 17:

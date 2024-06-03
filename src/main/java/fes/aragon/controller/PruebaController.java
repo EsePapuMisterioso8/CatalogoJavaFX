@@ -13,6 +13,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class PruebaController {
 
@@ -24,6 +25,7 @@ public class PruebaController {
     private Scene escena;
     private GraphicsContext graficos;
     private Personaje personaje;
+    private AnimationTimer tiempo;
     public void setEscena(Scene scene){
         this.escena =scene;
     }
@@ -38,7 +40,7 @@ public class PruebaController {
 
     private void ciclo() {
         long tiempoInicio = System.nanoTime();
-        AnimationTimer tiempo = new AnimationTimer() {
+         this.tiempo = new AnimationTimer() {
             @Override
             public void handle(long tiempoActual) {
                 double t = (tiempoActual-tiempoInicio)/1000000000.0;
@@ -83,8 +85,7 @@ public class PruebaController {
             componentesJuego.pintar(graficos);
         }
     }
-    private void cerrarJuego() {
-    }
+
     private void componentesIniciar() {
         graficos = canvasPrueba.getGraphicsContext2D();
         SinglentonPrueba.getInstance();
@@ -93,6 +94,15 @@ public class PruebaController {
         for(ComponentesJuego componentesJuego:SinglentonPrueba.getInstance().getElementos()){
             componentesJuego.logicaCalculos();
         }
+    }
+    public void cerrarJuego(){
+        Stage stage = (Stage) canvasPrueba.getScene().getWindow();
+        stage.setOnCloseRequest((t)->{
+            tiempo.stop();
+            SinglentonPrueba.getInstance().iniciar();
+            stage.close();
+            }
+        );
     }
 
 }

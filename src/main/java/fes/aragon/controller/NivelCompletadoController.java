@@ -34,6 +34,7 @@ public class NivelCompletadoController {
             stage.setScene(scene);
             stage.initStyle(StageStyle.UTILITY);
             stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setAlwaysOnTop(true);
             stage.show();
 
         } catch (IOException ex) {

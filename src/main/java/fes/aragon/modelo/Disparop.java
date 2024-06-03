@@ -13,6 +13,7 @@ private ArrayList<Rectangle> disparos = new ArrayList<>();
 private ArrayList<Rectangle> otro = new ArrayList<>();
     public Disparop(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
+
     }
 
     @Override
