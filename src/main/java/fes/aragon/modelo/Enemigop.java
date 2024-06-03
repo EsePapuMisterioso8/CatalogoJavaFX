@@ -41,6 +41,7 @@ public class Enemigop extends ComponentesJuego{
         if(disparo==true && contador>=0){
         if(contador<1) {
             Rectangle rectangulo = new Rectangle(x + figura.getWidth(), y, 10, 10);
+            rectangulo.setFill(Paint.valueOf("#1F75FE"));
             SinglentonPrueba.getInstance().getDisparop().getDisparop().add(rectangulo);
             contador++;
         }

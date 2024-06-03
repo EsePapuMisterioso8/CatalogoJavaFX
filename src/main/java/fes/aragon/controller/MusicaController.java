@@ -79,12 +79,14 @@ public class MusicaController implements Initializable {
                            if (list.get(indice).getHilo() != null) {
                                System.out.println(tblTablamusica.getSelectionModel().getSelectedIndex());
                                list.get(indice).getHilo().stop();
+                                corriendo = false;
                            } else{
                                System.out.println("Seleccione una canción antes de realizar la acción");
                            }
-                           corriendo = false;
+
                        });
                        reproducirIcono.setOnMouseClicked((MouseEvent evento)->{
+
                            if(!corriendo) {
                                MusicaCiclica musicaCiclica1 = tblTablamusica.getSelectionModel().getSelectedItem();
                                System.out.println(tblTablamusica.getSelectionModel().getSelectedIndex());
