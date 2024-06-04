@@ -139,12 +139,12 @@ public class Personaje extends ComponentesJuego{
                  for (Rectangle forma: SinglentonPrueba.getInstance().getPlataformas().getPlataforma()) {
                      int xx = 0;
 
-                     if(SinglentonPrueba.getInstance().getPersonaje().y-ancho<=forma.getY()-forma.getHeight()) {
+                     if(SinglentonPrueba.getInstance().getPersonaje().y-alto<=forma.getY()) {
                          if (forma.getBoundsInLocal().intersects(SinglentonPrueba.getInstance().getPersonaje().x, SinglentonPrueba.getInstance().getPersonaje().y, 40, 60)
                          ) {
                              //System.out.println("colision");
                              platafo.add(forma);
-                             if (y <= forma.getY()) {
+                             if (y-alto <= forma.getY()) {
                                  y = (int) (forma.getY() - alto);
                              }
                          }
@@ -154,7 +154,7 @@ public class Personaje extends ComponentesJuego{
                              if (x<xx) {
                              }else{
                                  if(y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
-                                     y= (int) (SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto);
+                                     y =(int) (SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto);
                                  }
                              }
 
