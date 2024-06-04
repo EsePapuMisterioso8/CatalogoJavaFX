@@ -19,7 +19,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Personaje extends ComponentesJuego{
-    private boolean colision;
+    private boolean callendo;
+    private boolean enSalto;
     private boolean cara;
     private Image imagen;
     private boolean derecha;
@@ -30,9 +31,7 @@ public class Personaje extends ComponentesJuego{
     private int alto = 60;
     private boolean salto;
     int contador = 0;
-    private int alturaInicial;
     private int alturaMaxima=2;
-    private int alturaActual;
     private int velocidadSalto=2;
     public Personaje(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
@@ -56,23 +55,34 @@ public class Personaje extends ComponentesJuego{
 
         switch (evento.getCode().toString()){
             case "RIGHT":
-                derecha = true;
-                cara=true;
-                izquierda = false;
-                arriba = false;
-                abajo = false;
-                break;
+                if(enSalto ==false ) {
+                        derecha = true;
+                        cara = true;
+                        izquierda = false;
+                        arriba = false;
+                        abajo = false;
+                        break;
+                }
+
+
             case "LEFT":
-                derecha = false;
-                izquierda = true;
-                cara=false;
-                arriba = false;
-                abajo = false;
-                break;
+                if(enSalto ==false ) {
+
+                        derecha = false;
+                        izquierda = true;
+                        cara = false;
+                        arriba = false;
+                        abajo = false;
+                        break;
+
+                }
+
+
             case "SPACE":
                 derecha = false;
                 izquierda = false;
                 salto = true;
+                enSalto= true;
                 abajo = false;
                 break;
             /*case "DOWN":
@@ -104,9 +114,10 @@ public class Personaje extends ComponentesJuego{
                 x--;
             }
         } else if (salto) {
+
             if (contador <= 50) {
                 y--;
-
+            enSalto = true;
                 if (x <= SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho && cara == true) {
                     x += 2;
 
@@ -122,18 +133,19 @@ public class Personaje extends ComponentesJuego{
                     salto = false;
 
                 }
+
             }
         } else {
-
-               if (y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
-                  // System.out.println(derecha+ "derecha");
-                   //System.out.println(izquierda+ "izquierda");
-                       y++;
-                       contador=0;
-                }
-
+            enSalto=false;
+            if (y < SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight() - alto) {
+                // System.out.println(derecha+ "derecha");
+                //System.out.println(izquierda+ "izquierda");
+                y++;
+                contador = 0;
+            }
 
         }
+
         ArrayList<Rectangle> platafo = new ArrayList<>();
 
                  for (Rectangle forma: SinglentonPrueba.getInstance().getPlataformas().getPlataforma()) {
