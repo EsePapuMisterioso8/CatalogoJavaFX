@@ -45,7 +45,7 @@
       </Label>
       <ImageView fitHeight="545.0" fitWidth="818.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imagen/Controles.jpg" />
+            <Image url="@../imagen/MenuControles.jpg" />
          </image>
       </ImageView>
    </children>

@@ -32,34 +32,18 @@ public class MenuController implements Initializable {
     @FXML
     private FontAwesomeIconView icnMusica;
 
-    private Thread hiloFondo;
     @FXML
-    private Button btnControles;
-     @FXML
-    void accionControles(ActionEvent event) {
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fes/aragon/xml/controles.fxml"));
-       try {
-           Parent parent = (Parent)fxmlLoader.load();
-           Scene scene = new Scene(parent);
-           Stage stage = new Stage();
-           stage.setScene(scene);
-           stage.initStyle(StageStyle.UTILITY);
-           stage.initModality(Modality.APPLICATION_MODAL);
-           stage.show();
-       } catch (IOException e) {
-           throw new RuntimeException(e);
-       }
-    }
+    private FontAwesomeIconView icnControles;
+
+    private Thread hiloFondo;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /*MusicaCiclica musicaCiclica = new MusicaCiclica("MusicaMenu");
-        hiloFondo = new Thread(musicaCiclica);
-        hiloFondo.start();
-         */
+        icnControles.setGlyphStyle("-fx-cursor:hand;");
         icnJuego.setGlyphStyle("-fx-cursor:hand;");
         icnMusica.setGlyphStyle("-fx-cursor:hand;");
     }
+
     @FXML
     void accionIniciarJuego(MouseEvent event) {
 
@@ -93,6 +77,21 @@ public class MenuController implements Initializable {
             stage.show();
         } catch (IOException ex) {
             throw new RuntimeException(ex);
+        }
+    }
+    @FXML
+    void accionAbrirControles(MouseEvent event) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fes/aragon/xml/controles.fxml"));
+        try {
+            Parent parent = (Parent)fxmlLoader.load();
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UTILITY);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

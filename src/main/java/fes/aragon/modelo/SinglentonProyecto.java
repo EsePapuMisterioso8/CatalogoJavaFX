@@ -26,7 +26,7 @@ public class SinglentonProyecto {
         personaje = new Personaje(58,660,getClass().getResource("/fes/aragon/imagen/ReimuPx.png").getFile(),1);
         enemigop = new Enemigop(586,385,null,1);
         disparop = new Disparop(0,0,null,1);
-        plataform = new Plataformero(13,640,getClass().getResource("/fes/aragon/imagen/Gotas.png").getFile(),1);
+        plataform = new Plataformero(13,640,null,1);
         elementos = new ArrayList<>();
         elementos.add(fondop);
         elementos.add(personaje);

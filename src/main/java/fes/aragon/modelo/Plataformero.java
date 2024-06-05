@@ -16,13 +16,6 @@ public class Plataformero extends ComponentesJuego{
     public Plataformero(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
 
-        try {
-            FileInputStream fi = new FileInputStream(imagen);
-            imagenes = new Image(fi);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
         int xx=28;
         int yy=696;
 
