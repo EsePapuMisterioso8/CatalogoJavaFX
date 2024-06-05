@@ -14,7 +14,7 @@ public class Enemigop extends ComponentesJuego{
     private int otroContador=0;
     public Enemigop(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
-        figura = new Rectangle(590,385,20,43);
+        figura = new Rectangle(370,533,20,35);
         otraFigura = new Rectangle(230,159,75,50);
     }
 
@@ -42,21 +42,17 @@ public class Enemigop extends ComponentesJuego{
         if(contador<1) {
             Rectangle rectangulo = new Rectangle(x + figura.getWidth(), y, 10, 10);
             rectangulo.setFill(Paint.valueOf("#1F75FE"));
-            SinglentonPrueba.getInstance().getDisparop().getDisparop().add(rectangulo);
+            SinglentonProyecto.getInstance().getDisparop().getDisparop().add(rectangulo);
             contador++;
         }
+
         }
         if(disparo==true && otroContador>=0) {
             if (otroContador < 1) {
                 Rectangle rectangulos = new Rectangle(otraFigura.getX() + otraFigura.getWidth(), otraFigura.getY(), 10, 10);
-                SinglentonPrueba.getInstance().getDisparop().getOtro().add(rectangulos);
+                SinglentonProyecto.getInstance().getDisparop().getOtro().add(rectangulos);
                 otroContador++;
             }
         }
-
-
-
-
-
     }
 }

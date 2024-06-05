@@ -27,7 +27,6 @@ public class NivelCompletadoController {
     void accionPonerMusica(ActionEvent event) {
 
         try {
-
             Parent parent = FXMLLoader.load(getClass().getResource("/fes/aragon/xml/musica.fxml"));
             scene = new Scene(parent);
             Stage stage = new Stage();
@@ -40,7 +39,6 @@ public class NivelCompletadoController {
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
-
     }
 
     @FXML

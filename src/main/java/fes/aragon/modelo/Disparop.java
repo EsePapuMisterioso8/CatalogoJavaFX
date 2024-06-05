@@ -40,14 +40,14 @@ private ArrayList<Rectangle> otro = new ArrayList<>();
     public void logicaCalculos() {
 
     for (Rectangle balas: disparos) {
-        if (balas.getX() < SinglentonPrueba.getInstance().getFondop().getImagenUno().getWidth() -balas.getWidth()) {
+        if (balas.getX() < SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() -balas.getWidth()) {
             balas.setX((balas.getX()+1));
         }else {
-            balas.setX(SinglentonPrueba.getInstance().getEnemigop().x+20);
+            balas.setX(SinglentonProyecto.getInstance().getEnemigop().x+20);
         }
     }
     for (Rectangle balas: otro) {
-        if (balas.getX() < SinglentonPrueba.getInstance().getFondop().getImagenUno().getWidth() -balas.getWidth()) {
+        if (balas.getX() < SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() -balas.getWidth()) {
             balas.setX((balas.getX()+1));
         }else {
             balas.setX(305);
@@ -58,17 +58,17 @@ private ArrayList<Rectangle> otro = new ArrayList<>();
 
 
     for (Rectangle bala: disparos){
-        if(bala.getBoundsInLocal().intersects(SinglentonPrueba.getInstance().getPersonaje().x,SinglentonPrueba.getInstance().getPersonaje().y,40,60)){
+        if(bala.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x,SinglentonProyecto.getInstance().getPersonaje().y,40,60)){
             System.out.println("Muerto");
-            SinglentonPrueba.getInstance().getPersonaje().setX(25);
-            SinglentonPrueba.getInstance().getPersonaje().setY(580);
+            SinglentonProyecto.getInstance().getPersonaje().setX(25);
+            SinglentonProyecto.getInstance().getPersonaje().setY(580);
         }
     }
     for (Rectangle balas: otro){
-        if(balas.getBoundsInLocal().intersects(SinglentonPrueba.getInstance().getPersonaje().x,SinglentonPrueba.getInstance().getPersonaje().y,40,60)){
+        if(balas.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x,SinglentonProyecto.getInstance().getPersonaje().y,40,60)){
             System.out.println("Muerto");
-            SinglentonPrueba.getInstance().getPersonaje().setX(25);
-            SinglentonPrueba.getInstance().getPersonaje().setY(580);
+            SinglentonProyecto.getInstance().getPersonaje().setX(25);
+            SinglentonProyecto.getInstance().getPersonaje().setY(580);
         }
     }
     }

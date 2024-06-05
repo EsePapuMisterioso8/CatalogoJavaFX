@@ -1,25 +1,17 @@
 package fes.aragon.modelo;
 
-import fes.aragon.controller.MenuController;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class Personaje extends ComponentesJuego{
-    private boolean callendo;
+
     private boolean enSalto;
     private boolean cara;
     private Image imagen;
@@ -27,12 +19,11 @@ public class Personaje extends ComponentesJuego{
     private boolean izquierda;
     private boolean arriba;
     private boolean abajo;
-    private int ancho=40;
-    private int alto = 60;
+    private int ancho= 25;
+    private int alto = 35;
     private boolean salto;
     int contador = 0;
-    private int alturaMaxima=2;
-    private int velocidadSalto=2;
+
     public Personaje(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
         try {
@@ -40,19 +31,19 @@ public class Personaje extends ComponentesJuego{
             this.imagen = new Image(fi);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
-
         }
-
     }
 
     @Override
     public void pintar(GraphicsContext grafico) {
     grafico.drawImage(imagen,x,y,ancho,alto);
     }
+
     @Override
     public void teclado(KeyEvent evento, boolean presion) {
 
         switch (evento.getCode().toString()){
+
             case "RIGHT":
                 if(enSalto ==false ) {
                         derecha = true;
@@ -63,7 +54,6 @@ public class Personaje extends ComponentesJuego{
                         break;
                 }
 
-
             case "LEFT":
                 if(enSalto ==false ) {
 
@@ -73,9 +63,7 @@ public class Personaje extends ComponentesJuego{
                         arriba = false;
                         abajo = false;
                         break;
-
                 }
-
 
             case "SPACE":
                 derecha = false;
@@ -84,16 +72,8 @@ public class Personaje extends ComponentesJuego{
                 enSalto= true;
                 abajo = false;
                 break;
-            /*case "DOWN":
-                derecha = false;
-                izquierda = false;
-                arriba = false;
-                abajo = true;
-                break;
 
-             */
         }
-
     }
 
     @Override
@@ -108,6 +88,7 @@ public class Personaje extends ComponentesJuego{
             if (x < SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho) {
                 this.x++;
             }
+
         } else if (izquierda) {
             if (x > 0) {
                 x--;
@@ -136,7 +117,7 @@ public class Personaje extends ComponentesJuego{
             }
         } else {
             enSalto=false;
-            if (y < SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight() - alto) {
+            if (y < SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight() - alto) {
                 // System.out.println(derecha+ "derecha");
                 //System.out.println(izquierda+ "izquierda");
                 y++;
@@ -147,13 +128,12 @@ public class Personaje extends ComponentesJuego{
 
         ArrayList<Rectangle> platafo = new ArrayList<>();
 
-                 for (Rectangle forma: SinglentonPrueba.getInstance().getPlataformas().getPlataforma()) {
+                 for (Rectangle forma: SinglentonProyecto.getInstance().getPlataformas().getPlataforma()) {
                      int xx = 0;
 
-                     if(SinglentonPrueba.getInstance().getPersonaje().y-alto<=forma.getY()) {
-                         if (forma.getBoundsInLocal().intersects(SinglentonPrueba.getInstance().getPersonaje().x, SinglentonPrueba.getInstance().getPersonaje().y, 40, 60)
+                     if(SinglentonProyecto.getInstance().getPersonaje().y-alto<=forma.getY()) {
+                         if (forma.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x, SinglentonProyecto.getInstance().getPersonaje().y, 40, 60)
                          ) {
-                             //System.out.println("colision");
                              platafo.add(forma);
                              if (y-alto <= forma.getY()) {
                                  y = (int) (forma.getY() - alto);
@@ -164,22 +144,21 @@ public class Personaje extends ComponentesJuego{
                              xx = (int) (formas.getX() + formas.getWidth());
                              if (x<xx) {
                              }else{
-                                 if(y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
-                                     y =(int) (SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto);
+                                 if(y<SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight()-alto) {
+                                     y =(int) (SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight()-alto);
                                  }
                              }
 
                              if(x+ancho>formas.getX()){
 
                              }else{
-                                 if(y<SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto) {
-                                     y=(int) (SinglentonPrueba.getInstance().getFondop().getImagenUno().getHeight()-alto);
+                                 if(y<SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight()-alto) {
+                                     y=(int) (SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight()-alto);
                                      ;
                                  }
                              }
                          }
                      }
-
                  }
                 /**
                  if(x ==746){
@@ -198,8 +177,6 @@ public class Personaje extends ComponentesJuego{
                      }
                  }
                  */
-
-
     }
 }
 

@@ -64,15 +64,15 @@ public class MenuController implements Initializable {
     void accionIniciarJuego(MouseEvent event) {
 
         try {
-            FXMLLoader modificar = new FXMLLoader(getClass().getResource("/fes/aragon/xml/pruebaJx.fxml"));
+            FXMLLoader modificar = new FXMLLoader(getClass().getResource("/fes/aragon/xml/proyecto.fxml"));
             Parent parent  = (Parent)modificar.load();
             Scene scene = new Scene(parent);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.initStyle(StageStyle.UTILITY);
             stage.initModality(Modality.APPLICATION_MODAL);
-            ((PruebaController)modificar.getController()).setEscena(scene);
-            ((PruebaController)modificar.getController()).inicio();
+            ((ProyectoController)modificar.getController()).setEscena(scene);
+            ((ProyectoController)modificar.getController()).iniciar();
             stage.show();
         } catch (IOException ex) {
             throw new RuntimeException(ex);

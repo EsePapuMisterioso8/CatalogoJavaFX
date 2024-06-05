@@ -7,8 +7,10 @@ public class SinglentonProyecto {
     private Fondop fondop;
     private static SinglentonProyecto singlentonProyecto;
     private ArrayList<ComponentesJuego> elementos;
-    private Plataformas plataformas;
-    private Plataformero plataformero;
+    private Plataformero plataform;
+    private Enemigop enemigop;
+    private Disparop disparop;
+    //private Trampas trampas;
     private SinglentonProyecto(){
         this.inicial();
     }
@@ -20,16 +22,17 @@ public class SinglentonProyecto {
     }
 
     public void inicial() {
-        fondop = new Fondop(0,0,getClass().getResource("/fes/aragon/imagen/MapaOficial.png").getFile(),3);
-        personaje = new Personaje(770,670,getClass().getResource("/fes/aragon/imagen/ReimuPx.png").getFile(),1);
-        plataformas= new Plataformas(489,684,null,1);
-        //plataformero= new Plataformero(489,684,null,1);
+        fondop = new Fondop(0,0,getClass().getResource("/fes/aragon/imagen/MapaFinal.jpeg").getFile(),3);
+        personaje = new Personaje(58,660,getClass().getResource("/fes/aragon/imagen/ReimuPx.png").getFile(),1);
+        enemigop = new Enemigop(586,385,null,1);
+        disparop = new Disparop(0,0,null,1);
+        plataform = new Plataformero(13,640,getClass().getResource("/fes/aragon/imagen/Gotas.png").getFile(),1);
         elementos = new ArrayList<>();
         elementos.add(fondop);
-        this.elementos.add(personaje);
-        elementos.add(2,plataformas);
-       // elementos.add(plataformero);
-
+        elementos.add(personaje);
+        elementos.add(enemigop);
+        elementos.add(disparop);
+        elementos.add(plataform);
 
     }
     public ArrayList<ComponentesJuego> getElementos(){
@@ -41,10 +44,13 @@ public class SinglentonProyecto {
     public Fondop getFondop(){
         return fondop;
     }
-    public Plataformas getPlataformas(){
-        return plataformas;
+    public Plataformero getPlataformas(){
+        return plataform;
     }
-    public Plataformero getPlataformero(){
-        return plataformero;
+    public Enemigop getEnemigop(){
+        return enemigop;
+    }
+    public Disparop getDisparop(){
+        return disparop;
     }
 }
