@@ -43,14 +43,15 @@ private ArrayList<Rectangle> otro = new ArrayList<>();
         if (balas.getX() < SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() -balas.getWidth()) {
             balas.setX((balas.getX()+1));
         }else {
-            balas.setX(SinglentonProyecto.getInstance().getEnemigop().x+20);
+            //balas.setX(SinglentonProyecto.getInstance().getEnemigop().x+20);
+            balas.setX(SinglentonProyecto.getInstance().getEnemigop().x+50);
         }
     }
     for (Rectangle balas: otro) {
         if (balas.getX() < SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() -balas.getWidth()) {
             balas.setX((balas.getX()+1));
         }else {
-            balas.setX(305);
+            balas.setX(413);
         }
     }
 
