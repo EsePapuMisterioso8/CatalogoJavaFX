@@ -7,13 +7,19 @@ import fes.aragon.modelo.SinglentonPrueba;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
+import java.io.IOException;
 
 public class PruebaController {
 
@@ -36,6 +42,7 @@ public class PruebaController {
         eventosTeclado();
         eventoRaton();
         ciclo();
+        verificarCambioEscenario();
     }
 
     private void ciclo() {
@@ -58,7 +65,6 @@ public class PruebaController {
             public void handle(MouseEvent event) {
                 SinglentonPrueba.getInstance().getFondop().raton(event);
             }
-
         });
     }
     private void eventosTeclado() {
@@ -103,6 +109,25 @@ public class PruebaController {
             stage.close();
             }
         );
+    }
+    private void verificarCambioEscenario() {
+        Personaje personaje = SinglentonPrueba.getInstance().getPersonaje();
+        int x = personaje.getX();
+        int y = personaje.getY();
+        if (x == 860 && y == 670) {
+            try {
+                Parent parent = FXMLLoader.load(getClass().getResource("/fes/aragon/xml/proyecto.fxml"));
+                Scene scene = new Scene(parent);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.initStyle(StageStyle.UTILITY);
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setAlwaysOnTop(true);
+                stage.show();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
     }
 
 }

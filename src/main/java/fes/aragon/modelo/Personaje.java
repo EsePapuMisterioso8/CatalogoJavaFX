@@ -48,7 +48,6 @@ public class Personaje extends ComponentesJuego{
 
     @Override
     public void pintar(GraphicsContext grafico) {
-
     grafico.drawImage(imagen,x,y,ancho,alto);
     }
     @Override
@@ -190,7 +189,6 @@ public class Personaje extends ComponentesJuego{
 
 
     }
-    }
-
+}
 
 

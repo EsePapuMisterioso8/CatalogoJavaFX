@@ -10,7 +10,7 @@ public class SinglentonProyecto {
     private Plataformas plataformas;
     private Plataformero plataformero;
     private SinglentonProyecto(){
-        this.iniciar();
+        this.inicial();
     }
     public static SinglentonProyecto getInstance(){
         if(singlentonProyecto == null){
@@ -19,7 +19,7 @@ public class SinglentonProyecto {
         return singlentonProyecto;
     }
 
-    private void iniciar() {
+    public void inicial() {
         fondop = new Fondop(0,0,getClass().getResource("/fes/aragon/imagen/MapaOficial.png").getFile(),3);
         personaje = new Personaje(770,670,getClass().getResource("/fes/aragon/imagen/ReimuPx.png").getFile(),1);
         plataformas= new Plataformas(489,684,null,1);
