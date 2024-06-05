@@ -6,7 +6,7 @@ public class SinglentonProyecto {
     private Personaje personaje;
     private Fondop fondop;
     private static SinglentonProyecto singlentonProyecto;
-    private ArrayList<ComponentesJuego> elementos;
+    private ArrayList<ComponentesJuego> elementos = new ArrayList<>();
     private Plataformero plataform;
     private Enemigop enemigop;
     private Disparop disparop;
@@ -29,8 +29,8 @@ public class SinglentonProyecto {
         plataform = new Plataformero(13,640,null,1);
         elementos = new ArrayList<>();
         elementos.add(fondop);
-        elementos.add(personaje);
         elementos.add(enemigop);
+        elementos.add(personaje);
         elementos.add(disparop);
         elementos.add(plataform);
 

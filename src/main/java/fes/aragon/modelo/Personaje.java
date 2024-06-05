@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Personaje extends ComponentesJuego{
+    private boolean callendo;
 
     private boolean enSalto;
     private boolean cara;
@@ -42,37 +43,28 @@ public class Personaje extends ComponentesJuego{
     @Override
     public void teclado(KeyEvent evento, boolean presion) {
 
-        switch (evento.getCode().toString()){
+        switch (evento.getCode().toString()) {
 
             case "RIGHT":
-                if(enSalto ==false ) {
-                        derecha = true;
-                        cara = true;
-                        izquierda = false;
-                        arriba = false;
-                        abajo = false;
-                        break;
-                }
-
+                derecha = true;
+                cara = true;
+                izquierda = false;
+                salto = false;
+                abajo = false;
+                break;
             case "LEFT":
-                if(enSalto ==false ) {
-
-                        derecha = false;
-                        izquierda = true;
-                        cara = false;
-                        arriba = false;
-                        abajo = false;
-                        break;
-                }
-
+                derecha = false;
+                cara = false;
+                izquierda = true;
+                salto = false;
+                abajo = false;
+                break;
             case "SPACE":
                 derecha = false;
                 izquierda = false;
                 salto = true;
-                enSalto= true;
                 abajo = false;
                 break;
-
         }
     }
 
@@ -93,11 +85,11 @@ public class Personaje extends ComponentesJuego{
             if (x > 0) {
                 x--;
             }
-        } else if (salto) {
-
-            if (contador <= 50) {
+        } else if (salto ) {
+            if (contador <= 30) {
                 y--;
-            enSalto = true;
+                System.out.println(y);
+
                 if (x <= SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho && cara == true) {
                     x += 2;
 
@@ -109,20 +101,27 @@ public class Personaje extends ComponentesJuego{
                     }
                 }
                 contador++;
-                if (contador == 50) {
+                System.out.println(contador);
+                if (contador == 30) {
+                    callendo=true;
                     salto = false;
 
                 }
-
             }
         } else {
-            enSalto=false;
-            if (y < SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight() - alto) {
-                // System.out.println(derecha+ "derecha");
-                //System.out.println(izquierda+ "izquierda");
-                y++;
-                contador = 0;
+
+
+            if(y<SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight()-alto) {
+                if (callendo == true) {
+
+                    y++;
+                    contador = 0;
+
+                }
             }
+              // }
+
+
 
         }
 
@@ -132,7 +131,7 @@ public class Personaje extends ComponentesJuego{
                      int xx = 0;
 
                      if(SinglentonProyecto.getInstance().getPersonaje().y-alto<=forma.getY()) {
-                         if (forma.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x, SinglentonProyecto.getInstance().getPersonaje().y, 40, 60)
+                         if (forma.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x, SinglentonProyecto.getInstance().getPersonaje().y, 25, 35)
                          ) {
                              platafo.add(forma);
                              if (y-alto <= forma.getY()) {
@@ -160,23 +159,7 @@ public class Personaje extends ComponentesJuego{
                          }
                      }
                  }
-                /**
-                 if(x ==746){
-                     try {
-                        Parent parent = FXMLLoader.load(getClass().getResource("/fes/aragon/xml/nivelcompletado.fxml"));
-                        Scene scene = new Scene(parent);
-                        Stage stage = new Stage();
-                        stage.setScene(scene);
-                        stage.initStyle(StageStyle.UTILITY);
-                        //
-                         // stage.setAlwaysOnTop(true);
-                        stage.initModality(Modality.APPLICATION_MODAL);
-                        stage.show();
-                     } catch (IOException ex) {
-                         throw new RuntimeException(ex);
-                     }
-                 }
-                 */
+
     }
 }
 
