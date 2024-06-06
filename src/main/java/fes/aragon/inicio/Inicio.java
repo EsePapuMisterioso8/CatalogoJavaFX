@@ -1,13 +1,4 @@
 package fes.aragon.inicio;
-//Ola xd como esta si se ve xd? Wazaaaaaaa
-//Wazaaaaaaaaa ola ptm porqueria no sirve , otro intento xd xd xd xd xd xd aaaaaa
-//aaaaaaaaaa
-//OLA PAPUUUUU
-//Gael no te ayuda a subir tu squeak pq le bjas de copas xd xd xd xd
-//Gael nos hace una papeada termonuclear
-//Bocchi la roca >>> Dodo
-//America = gay
-//Jajaja el frustrazul casi la caga xd xd
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
