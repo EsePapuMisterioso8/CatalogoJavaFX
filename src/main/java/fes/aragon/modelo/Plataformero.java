@@ -6,12 +6,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Plataformero extends ComponentesJuego{
-    private Image imagenes;
+
     private ArrayList<Rectangle> plataformas = new ArrayList<>();
     public Plataformero(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
@@ -184,7 +182,7 @@ public class Plataformero extends ComponentesJuego{
     public void pintar(GraphicsContext grafico) {
         for(Rectangle rectangle: plataformas){
             grafico.strokeRect(rectangle.getX(), rectangle.getY(), rectangle.getWidth(),rectangle.getHeight());
-            grafico.setFill(Paint.valueOf("#1F75FE"));
+            //grafico.setFill(Paint.valueOf("#1F75FE"));
         }
     }
 

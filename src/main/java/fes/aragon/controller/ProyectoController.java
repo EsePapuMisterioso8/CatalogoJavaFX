@@ -13,6 +13,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class ProyectoController {
 
@@ -23,7 +24,6 @@ public class ProyectoController {
     private Pane pnePrincipal;
     private Scene escena;
     private GraphicsContext graficos;
-    private Personaje personaje;
     public void setEscena(Scene scene){
         this.escena =scene;
     }
@@ -85,6 +85,7 @@ public class ProyectoController {
     }
 
     private void cerrarJuego() {
+
     }
 
     private void componentesIniciar() {

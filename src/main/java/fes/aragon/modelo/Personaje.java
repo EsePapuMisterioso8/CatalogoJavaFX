@@ -19,8 +19,8 @@ public class Personaje extends ComponentesJuego{
     private boolean izquierda;
     private boolean arriba;
     private boolean abajo;
-    private int ancho= 25;
-    private int alto = 35;
+    private int ancho= 20;
+    private int alto = 30;
     private boolean salto;
     int contador = 0;
 
@@ -56,7 +56,6 @@ public class Personaje extends ComponentesJuego{
 
             case "LEFT":
                 if(enSalto ==false ) {
-
                         derecha = false;
                         izquierda = true;
                         cara = false;
@@ -84,7 +83,6 @@ public class Personaje extends ComponentesJuego{
     @Override
     public void logicaCalculos() {
         if (derecha) {
-
             if (x < SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho) {
                 this.x++;
             }
@@ -95,7 +93,7 @@ public class Personaje extends ComponentesJuego{
             }
         } else if (salto) {
 
-            if (contador <= 50) {
+            if (contador <= 33) {
                 y--;
             enSalto = true;
                 if (x <= SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho && cara == true) {
@@ -109,7 +107,7 @@ public class Personaje extends ComponentesJuego{
                     }
                 }
                 contador++;
-                if (contador == 50) {
+                if (contador == 33) {
                     salto = false;
 
                 }
@@ -132,7 +130,7 @@ public class Personaje extends ComponentesJuego{
                      int xx = 0;
 
                      if(SinglentonProyecto.getInstance().getPersonaje().y-alto<=forma.getY()) {
-                         if (forma.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x, SinglentonProyecto.getInstance().getPersonaje().y, 40, 60)
+                         if (forma.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x, SinglentonProyecto.getInstance().getPersonaje().y, 20, 30)
                          ) {
                              platafo.add(forma);
                              if (y-alto <= forma.getY()) {
