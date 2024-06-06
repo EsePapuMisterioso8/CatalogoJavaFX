@@ -11,7 +11,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Personaje extends ComponentesJuego{
-    private boolean callendo;
 
     private boolean enSalto;
     private boolean cara;
@@ -46,19 +45,23 @@ public class Personaje extends ComponentesJuego{
         switch (evento.getCode().toString()) {
 
             case "RIGHT":
-                derecha = true;
-                cara = true;
-                izquierda = false;
-                salto = false;
-                abajo = false;
-                break;
+                if(enSalto==false) {
+                    derecha = true;
+                    cara = true;
+                    izquierda = false;
+                    salto = false;
+                    abajo = false;
+                    break;
+                }
             case "LEFT":
-                derecha = false;
-                cara = false;
-                izquierda = true;
-                salto = false;
-                abajo = false;
-                break;
+                if(enSalto==false) {
+                    derecha = false;
+                    cara = false;
+                    izquierda = true;
+                    salto = false;
+                    abajo = false;
+                    break;
+                }
             case "SPACE":
                 derecha = false;
                 izquierda = false;
@@ -88,8 +91,7 @@ public class Personaje extends ComponentesJuego{
         } else if (salto ) {
             if (contador <= 30) {
                 y--;
-                System.out.println(y);
-
+                enSalto=true;
                 if (x <= SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho && cara == true) {
                     x += 2;
 
@@ -101,9 +103,7 @@ public class Personaje extends ComponentesJuego{
                     }
                 }
                 contador++;
-                System.out.println(contador);
                 if (contador == 30) {
-                    callendo=true;
                     salto = false;
 
                 }
@@ -112,14 +112,10 @@ public class Personaje extends ComponentesJuego{
 
 
             if(y<SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight()-alto) {
-                if (callendo == true) {
-
                     y++;
                     contador = 0;
-
-                }
             }
-              // }
+            enSalto=false;
 
 
 
