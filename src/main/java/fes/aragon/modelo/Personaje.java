@@ -20,8 +20,8 @@ public class Personaje extends ComponentesJuego{
     private boolean izquierda;
     private boolean arriba;
     private boolean abajo;
-    private int ancho= 25;
-    private int alto = 35;
+    private int ancho= 20;
+    private int alto = 30;
     private boolean salto;
     int contador = 0;
 
@@ -86,7 +86,7 @@ public class Personaje extends ComponentesJuego{
                 x--;
             }
         } else if (salto ) {
-            if (contador <= 30) {
+            if (contador <= 33) {
                 y--;
                 System.out.println(y);
 
@@ -102,7 +102,7 @@ public class Personaje extends ComponentesJuego{
                 }
                 contador++;
                 System.out.println(contador);
-                if (contador == 30) {
+                if (contador == 32) {
                     callendo=true;
                     salto = false;
 
@@ -131,7 +131,7 @@ public class Personaje extends ComponentesJuego{
                      int xx = 0;
 
                      if(SinglentonProyecto.getInstance().getPersonaje().y-alto<=forma.getY()) {
-                         if (forma.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x, SinglentonProyecto.getInstance().getPersonaje().y, 25, 35)
+                         if (forma.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x, SinglentonProyecto.getInstance().getPersonaje().y, 20, 30)
                          ) {
                              platafo.add(forma);
                              if (y-alto <= forma.getY()) {
