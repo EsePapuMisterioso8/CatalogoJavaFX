@@ -85,7 +85,7 @@ public class Plataformero extends ComponentesJuego{
                     plataformas.add(plataforma);
                     break;
                 case 16:
-                    plataforma = new Rectangle(387,518,33,5);
+                    plataforma = new Rectangle(387,518,31,5);
                     plataformas.add(plataforma);
                     break;
                 case 17:
