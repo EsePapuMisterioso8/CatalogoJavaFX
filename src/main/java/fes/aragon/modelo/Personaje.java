@@ -130,23 +130,24 @@ public class Personaje extends ComponentesJuego{
                  for (Rectangle forma: SinglentonProyecto.getInstance().getPlataformas().getPlataforma()) {
                      int xx = 0;//variable para ver cuando se salga el personaje de la plataforma
 
-                     //si el
-                    // System.out.println(SinglentonProyecto.getInstance().getPersonaje().y+alto);
+                     //si el personaje hace colision con la plataforma y su y es mayor o igual que la y de la plataforma
+
                      System.out.println(forma.getY());
                      if(SinglentonProyecto.getInstance().getPersonaje().y<=forma.getY()) {
                          if (forma.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x, SinglentonProyecto.getInstance().getPersonaje().y, 20, 30)
                          ) {
-                             System.out.println("colision");
+                             //System.out.println("colision");
                              platafo.add(forma);
                              if (SinglentonProyecto.getInstance().getPersonaje().y<= forma.getY()) {
-                                 y = (int) (forma.getY() - alto);
+                                 y = (int) (forma.getY() - alto); //le asignamos la y de la plataforma al personaje
                              }
                          }
                      }else {
-                         for (Rectangle formas : platafo) {
-                             xx = (int) (formas.getX() + formas.getWidth());
+                         //cuando no sea y mayor que la y de la plataforma tomamos el array list de las plataformas que se tocó
+                         for (Rectangle formas : platafo) { // recorremos el array list
+                             xx = (int) (formas.getX() + formas.getWidth()); //variable del espacio total que se puede recorrer en una plataforma
                              if (x<xx) {
-                             }else{
+                             }else{ //si ya el personaje no esta en la plataforma entonces se cae por la derecha
                                  if(y<SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight()-alto ) {
                                      if (contadorBajadaDerecha >= 0) {
                                          y++;
@@ -172,7 +173,7 @@ public class Personaje extends ComponentesJuego{
                                      }
                                      if(contadorBajadaIzquierda == 0 ){
                                          contadorBajadaIzquierda = 50;
-                                     }
+                                     }//caida por la izquierda
                                  }
                              }
                          }
