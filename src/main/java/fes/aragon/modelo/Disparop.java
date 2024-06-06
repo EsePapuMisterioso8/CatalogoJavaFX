@@ -1,11 +1,14 @@
 package fes.aragon.modelo;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Disparop extends ComponentesJuego{
@@ -13,26 +16,32 @@ private ArrayList<Rectangle> disparos = new ArrayList<>();
 private ArrayList<Rectangle> otro = new ArrayList<>();
 private ArrayList<Rectangle> soldadoBajo = new ArrayList<>();
 private ArrayList<Rectangle> soldadoArriba = new ArrayList<>();
+private Image imagen;
+
     public Disparop(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
-
+        try {
+            FileInputStream fi = new FileInputStream(imagen);
+            this.imagen = new Image(fi);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public void pintar(GraphicsContext grafico) {
 
-
     for(Rectangle disparo: disparos){
-        grafico.fillRect(disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
+        grafico.drawImage(imagen,disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
     }
     for (Rectangle disparo:otro){
-        grafico.fillRect(disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
+        grafico.drawImage(imagen,disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
     }
     for (Rectangle disparo: soldadoBajo){
-        grafico.fillRect(disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
+        grafico.drawImage(imagen,disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
     }
     for(Rectangle disparo : soldadoArriba){
-        grafico.fillRect(disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
+        grafico.drawImage(imagen,disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
     }
 
     }
@@ -82,9 +91,6 @@ private ArrayList<Rectangle> soldadoArriba = new ArrayList<>();
             balas.setX(56);
         }
     }
-
-
-
 
     for (Rectangle bala: disparos){
         if(bala.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x,SinglentonProyecto.getInstance().getPersonaje().y,20,30)){

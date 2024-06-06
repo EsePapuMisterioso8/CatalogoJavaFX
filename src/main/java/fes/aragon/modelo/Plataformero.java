@@ -11,8 +11,11 @@ import java.util.ArrayList;
 public class Plataformero extends ComponentesJuego{
 
     private ArrayList<Rectangle> plataformas = new ArrayList<>();
+    private Rectangle piso;
     public Plataformero(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
+
+        piso = new Rectangle(1,729,1023,3);
 
         int xx=28;
         int yy=696;
@@ -180,6 +183,8 @@ public class Plataformero extends ComponentesJuego{
     }
     @Override
     public void pintar(GraphicsContext grafico) {
+        grafico.strokeRect(piso.getX(),piso.getY(),piso.getWidth(),piso.getHeight());
+        //grafico.setFill(Paint.valueOf("#1F75FE"));
         for(Rectangle rectangle: plataformas){
             grafico.strokeRect(rectangle.getX(), rectangle.getY(), rectangle.getWidth(),rectangle.getHeight());
             //grafico.setFill(Paint.valueOf("#1F75FE"));
@@ -198,7 +203,10 @@ public class Plataformero extends ComponentesJuego{
 
     @Override
     public void logicaCalculos() {
-
+            if(piso.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x,SinglentonProyecto.getInstance().getPersonaje().y,20,30)){
+                SinglentonProyecto.getInstance().getPersonaje().setX(25);
+                SinglentonProyecto.getInstance().getPersonaje().setY(580);
+        }
     }
     public ArrayList<Rectangle> getPlataforma(){
         return plataformas;

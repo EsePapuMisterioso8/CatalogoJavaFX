@@ -21,10 +21,10 @@ public class Enemigop extends ComponentesJuego {
 
     public Enemigop(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
-            figura= new Rectangle(325, 176, 47, 40);
-            otraFigura = new Rectangle(363, 535, 50, 35);
-            soldado1= new Rectangle(964,454,52,40);
-            soldado2 = new  Rectangle(14,285,40,45);
+            figura= new Rectangle(325, 170, 47, 40);
+            otraFigura = new Rectangle(363, 530, 50, 35);
+            soldado1= new Rectangle(964,456,52,40);
+            soldado2 = new  Rectangle(14,278,40,45);
     }
 
     @Override
@@ -51,8 +51,7 @@ public class Enemigop extends ComponentesJuego {
 
         if(disparo && contador>=0){
             if(contador<1) {
-                Rectangle rectangulo = new Rectangle(figura.getX() + figura.getWidth(), figura.getY()+(figura.getHeight()/2)-2, 10, 10);
-                rectangulo.setFill(Paint.valueOf("#1F75FE"));
+                Rectangle rectangulo = new Rectangle(figura.getX() + figura.getWidth(), figura.getY()+(figura.getHeight()/2)-2, 15, 15);
                 SinglentonProyecto.getInstance().getDisparop().getDisparop().add(rectangulo);
                 contador++;
             }
@@ -60,7 +59,7 @@ public class Enemigop extends ComponentesJuego {
         }
         if(disparo && otroContador>=0) {
             if (otroContador < 1) {
-                Rectangle rectangulos = new Rectangle(otraFigura.getX() + otraFigura.getWidth(), otraFigura.getY()+ (otraFigura.getHeight()/2)-3, 10, 10);
+                Rectangle rectangulos = new Rectangle(otraFigura.getX() + otraFigura.getWidth(), otraFigura.getY()+ (otraFigura.getHeight()/2)-3, 15, 15);
                 SinglentonProyecto.getInstance().getDisparop().getOtro().add(rectangulos);
                 otroContador++;
             }
@@ -68,14 +67,14 @@ public class Enemigop extends ComponentesJuego {
 
         if(disparo && otrosContador>=0) {
             if (otrosContador < 1) {
-                Rectangle rectangulos = new Rectangle(soldado1.getX(), soldado1.getY(), 10, 10);
+                Rectangle rectangulos = new Rectangle(soldado1.getX(), soldado1.getY(), 15, 15);
                 SinglentonProyecto.getInstance().getDisparop().getSoldadoBajo().add(rectangulos);
                 otrosContador++;
             }
         }
         if(disparo && contadors>=0) {
             if (contadors < 1) {
-                Rectangle rectangulos = new Rectangle(soldado2.getX() + soldado2.getWidth(), soldado2.getY()+ (soldado2.getHeight()/2)-3, 10, 10);
+                Rectangle rectangulos = new Rectangle(soldado2.getX() + soldado2.getWidth(), soldado2.getY()+ (soldado2.getHeight()/2)-3, 15, 15);
                 SinglentonProyecto.getInstance().getDisparop().getSoldadoArriba().add(rectangulos);
                 contadors++;
             }
