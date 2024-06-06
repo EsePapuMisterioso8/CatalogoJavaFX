@@ -50,7 +50,7 @@ public class ProyectoController {
         tiempo.start();
     }
 
-    private void eventoRaton() {
+    public void eventoRaton() {
         escena.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -59,7 +59,7 @@ public class ProyectoController {
         });
     }
 
-    private void eventosTeclado() {
+    public void eventosTeclado() {
         escena.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
