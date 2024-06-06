@@ -18,12 +18,15 @@ private ArrayList<Rectangle> otro = new ArrayList<>();
 
     @Override
     public void pintar(GraphicsContext grafico) {
+
+
     for(Rectangle disparo: disparos){
         grafico.fillRect(disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
     }
     for (Rectangle disparo:otro){
         grafico.fillRect(disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
     }
+
     }
 
     @Override
@@ -39,12 +42,14 @@ private ArrayList<Rectangle> otro = new ArrayList<>();
     @Override
     public void logicaCalculos() {
 
+
     for (Rectangle balas: disparos) {
         if (balas.getX() < SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() -balas.getWidth()) {
             balas.setX((balas.getX()+1));
         }else {
             //balas.setX(SinglentonProyecto.getInstance().getEnemigop().x+20);
-            balas.setX(SinglentonProyecto.getInstance().getEnemigop().x+50);
+            balas.setX(SinglentonProyecto.getInstance().getEnemigop().x+47);
+            System.out.println(SinglentonProyecto.getInstance().getEnemigop().x+47);
         }
     }
     for (Rectangle balas: otro) {
@@ -53,6 +58,7 @@ private ArrayList<Rectangle> otro = new ArrayList<>();
         }else {
             balas.setX(413);
         }
+
     }
 
 
@@ -72,6 +78,7 @@ private ArrayList<Rectangle> otro = new ArrayList<>();
             SinglentonProyecto.getInstance().getPersonaje().setY(580);
         }
     }
+
     }
     public ArrayList<Rectangle> getDisparop(){
         return disparos;
