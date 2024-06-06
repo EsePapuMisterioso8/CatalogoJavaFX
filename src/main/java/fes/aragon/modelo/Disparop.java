@@ -11,6 +11,8 @@ import java.util.ArrayList;
 public class Disparop extends ComponentesJuego{
 private ArrayList<Rectangle> disparos = new ArrayList<>();
 private ArrayList<Rectangle> otro = new ArrayList<>();
+private ArrayList<Rectangle> soldadoBajo = new ArrayList<>();
+private ArrayList<Rectangle> soldadoArriba = new ArrayList<>();
     public Disparop(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
 
@@ -24,6 +26,12 @@ private ArrayList<Rectangle> otro = new ArrayList<>();
         grafico.fillRect(disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
     }
     for (Rectangle disparo:otro){
+        grafico.fillRect(disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
+    }
+    for (Rectangle disparo: soldadoBajo){
+        grafico.fillRect(disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
+    }
+    for(Rectangle disparo : soldadoArriba){
         grafico.fillRect(disparo.getX(),disparo.getY(),disparo.getWidth(),disparo.getHeight());
     }
 
@@ -60,6 +68,20 @@ private ArrayList<Rectangle> otro = new ArrayList<>();
         }
 
     }
+    for(Rectangle balas: soldadoBajo){
+        if(balas.getX()>0){
+            balas.setX(balas.getX()-1);
+        }else{
+            balas.setX(960);
+        }
+    }
+    for(Rectangle balas: soldadoArriba){
+        if(balas.getX()<SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth()-balas.getWidth()){
+            balas.setX(balas.getX()+1);
+        }else{
+            balas.setX(56);
+        }
+    }
 
 
 
@@ -85,5 +107,11 @@ private ArrayList<Rectangle> otro = new ArrayList<>();
     }
     public  ArrayList<Rectangle> getOtro(){
         return otro;
+    }
+    public ArrayList<Rectangle> getSoldadoBajo(){
+        return soldadoBajo;
+    }
+    public  ArrayList<Rectangle> getSoldadoArriba(){
+        return soldadoArriba;
     }
 }
