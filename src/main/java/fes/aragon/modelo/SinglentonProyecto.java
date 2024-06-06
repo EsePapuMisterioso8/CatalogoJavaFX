@@ -22,11 +22,11 @@ public class SinglentonProyecto {
     }
 
     public void inicial() {
-        fondop = new Fondop(0,0,getClass().getResource("/fes/aragon/imagen/MapaFinal.jpeg").getFile(),0);
-        personaje = new Personaje(58,660,getClass().getResource("/fes/aragon/imagen/ReimuPx2.png").getFile(),1);
-        enemigop = new Enemigop(376,547,null,1);
-        disparop = new Disparop(0,0, getClass().getResource("/fes/aragon/imagen/BalaSM2.png").getFile(),1);
-        plataform = new Plataformero(13,640,null, 1);
+        fondop = new Fondop(0,0,getClass().getResource("/fes/aragon/imagen/MapaFinal.jpeg").getFile(),3);
+        personaje = new Personaje(58,660,getClass().getResource("/fes/aragon/imagen/ReimuPx.png").getFile(),1);
+        enemigop = new Enemigop(325, 176,null,1);
+        disparop = new Disparop(0,0,null,1);
+        plataform = new Plataformero(13,640,null,1);
         elementos = new ArrayList<>();
         elementos.add(fondop);
         elementos.add(enemigop);

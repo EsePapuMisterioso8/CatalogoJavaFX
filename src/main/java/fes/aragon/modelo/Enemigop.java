@@ -6,16 +6,25 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 
-public class Enemigop extends ComponentesJuego{
-    private Rectangle figura ;
+import java.util.ArrayList;
+
+public class Enemigop extends ComponentesJuego {
+    private Rectangle figura;
     private Rectangle otraFigura;
-    private boolean disparo=true;
-    private int contador=0;
-    private int otroContador=0;
+    private ArrayList<Rectangle> enemigos;
+    private boolean disparo = true;
+    private int contador = 0;
+    private int otroContador = 0;
+
     public Enemigop(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
-        figura = new Rectangle(325,176,47,47);
-        otraFigura = new Rectangle(363,535,50,35);
+            figura= new Rectangle(325, 176, 47, 40);
+            otraFigura = new Rectangle(363, 535, 50, 35);
+
+
+
+
+
     }
 
     @Override
@@ -39,12 +48,12 @@ public class Enemigop extends ComponentesJuego{
 
 
         if(disparo==true && contador>=0){
-        if(contador<1) {
-           Rectangle rectangulo = new Rectangle(figura.getX() + figura.getWidth(), figura.getY(), 10, 10);
-            rectangulo.setFill(Paint.valueOf("#1F75FE"));
-            SinglentonProyecto.getInstance().getDisparop().getDisparop().add(rectangulo);
-            contador++;
-        }
+            if(contador<1) {
+                Rectangle rectangulo = new Rectangle(figura.getX() + figura.getWidth(), figura.getY()+(figura.getHeight()/2)-2, 10, 10);
+                rectangulo.setFill(Paint.valueOf("#1F75FE"));
+                SinglentonProyecto.getInstance().getDisparop().getDisparop().add(rectangulo);
+                contador++;
+            }
 
         }
         if(disparo==true && otroContador>=0) {
@@ -54,5 +63,8 @@ public class Enemigop extends ComponentesJuego{
                 otroContador++;
             }
         }
+
+
     }
+
 }
