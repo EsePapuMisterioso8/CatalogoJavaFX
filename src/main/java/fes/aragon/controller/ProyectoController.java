@@ -44,6 +44,11 @@ public class ProyectoController {
                 double t = (tiempoActual-tiempoInicio)/1000000000.0;
                 calculosLogicos();
                 pintar();
+                try {
+                    Thread.sleep(9);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
 
         };

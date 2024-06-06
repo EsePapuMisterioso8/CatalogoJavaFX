@@ -20,7 +20,7 @@ public class Plataformero extends ComponentesJuego{
         int xx=28;
         int yy=696;
 
-        for(int i=0;i<=38;i++){
+        for(int i=0;i<=39;i++){
 
             Rectangle plataforma = new Rectangle(xx,yy,89,10);
             plataformas.add(plataforma);
@@ -51,27 +51,27 @@ public class Plataformero extends ComponentesJuego{
                     plataformas.add(plataforma);
                     break;
                 case 7:
-                    plataforma = new Rectangle(891,628,45,10);
+                    plataforma = new Rectangle(891,630,45,10);
                     plataformas.add(plataforma);
                     break;
                 case 8:
-                    plataforma = new Rectangle(965,612,55,10);
+                    plataforma = new Rectangle(965,613,55,10);
                     plataformas.add(plataforma);
                     break;
                 case 9:
-                    plataforma = new Rectangle(900,573,42,5);
+                    plataforma = new Rectangle(900,573,48,5);
                     plataformas.add(plataforma);
                     break;
                 case 10:
-                    plataforma = new Rectangle(835,549,42,5);
+                    plataforma = new Rectangle(835,549,37,5);
                     plataformas.add(plataforma);
                     break;
                 case 11:
-                    plataforma = new Rectangle(776,523,33,5);
+                    plataforma = new Rectangle(776,524,25,5);
                     plataformas.add(plataforma);
                     break;
                 case 12:
-                    plataforma = new Rectangle(718,508,33,5);
+                    plataforma = new Rectangle(718,508,31,5);
                     plataformas.add(plataforma);
                     break;
                 case 13:
@@ -83,7 +83,7 @@ public class Plataformero extends ComponentesJuego{
                     plataformas.add(plataforma);
                     break;
                 case 15:
-                    plataforma = new Rectangle(444,535,33,5);
+                    plataforma = new Rectangle(444,536,33,5);
                     plataformas.add(plataforma);
                     break;
                 case 16:
@@ -135,7 +135,7 @@ public class Plataformero extends ComponentesJuego{
                     plataformas.add(plataforma);
                     break;
                 case 28:
-                    plataforma = new Rectangle(516,390,67,10);
+                    plataforma = new Rectangle(516,340,67,10);
                     plataformas.add(plataforma);
                     break;
                 case 29:
@@ -176,6 +176,10 @@ public class Plataformero extends ComponentesJuego{
                     break;
                 case 38:
                     plataforma = new Rectangle(21,161,288,10);
+                    plataformas.add(plataforma);
+                    break;
+                case 39:
+                    plataforma = new Rectangle(443,362,46,11);
                     plataformas.add(plataforma);
                     break;
             }

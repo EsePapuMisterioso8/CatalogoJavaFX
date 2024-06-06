@@ -79,14 +79,14 @@ private Image imagen;
     }
     for(Rectangle balas: soldadoBajo){
         if(balas.getX()>0){
-            balas.setX(balas.getX()-1);
+            balas.setX(balas.getX()-3);
         }else{
             balas.setX(960);
         }
     }
     for(Rectangle balas: soldadoArriba){
         if(balas.getX()<SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth()-balas.getWidth()){
-            balas.setX(balas.getX()+1);
+                balas.setX(balas.getX()+3);
         }else{
             balas.setX(56);
         }

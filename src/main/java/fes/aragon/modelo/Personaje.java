@@ -92,7 +92,7 @@ public class Personaje extends ComponentesJuego{
             }
         } else if (salto ) {
             //al presionar enter se activará el movimiento de salto
-            if (contador <= 33) {
+            if (contador <= 36) {
                 y--;
                 enSalto=true;
                 //Si la cara a la que ves es la derecha saltarás hacía la derecha
@@ -107,7 +107,7 @@ public class Personaje extends ComponentesJuego{
                 }
                 contador++;
                 //cuando el maximo del salto se de entonces el salto se vuelve falso
-                if (contador == 33) {
+                if (contador == 36) {
                     salto = false;
                 }
             }

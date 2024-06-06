@@ -22,7 +22,7 @@ public class SinglentonProyecto {
     }
 
     public void inicial() {
-        fondop = new Fondop(0,0,getClass().getResource("/fes/aragon/imagen/MapaFinal.jpeg").getFile(),3);
+        fondop = new Fondop(0,0,getClass().getResource("/fes/aragon/imagen/MapaFinalx.png").getFile(),3);
         personaje = new Personaje(58,660,getClass().getResource("/fes/aragon/imagen/ReimuPx2.png").getFile(),1);
         enemigop = new Enemigop(325, 176,null,1);
         disparop = new Disparop(0,0,getClass().getResource("/fes/aragon/imagen/Fire.png").getFile() ,1);
