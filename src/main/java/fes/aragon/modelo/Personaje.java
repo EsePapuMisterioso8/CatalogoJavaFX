@@ -132,22 +132,23 @@ public class Personaje extends ComponentesJuego{
 
                      //si el personaje hace colision con la plataforma y su y es mayor o igual que la y de la plataforma
 
-                     System.out.println(forma.getY());
+
+                     if (forma.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x, SinglentonProyecto.getInstance().getPersonaje().y, 20, 30)) {
                      if(SinglentonProyecto.getInstance().getPersonaje().y<=forma.getY()) {
-                         if (forma.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x, SinglentonProyecto.getInstance().getPersonaje().y, 20, 30)
-                         ) {
-                             //System.out.println("colision");
+
                              platafo.add(forma);
                              if (SinglentonProyecto.getInstance().getPersonaje().y<= forma.getY()) {
                                  y = (int) (forma.getY() - alto); //le asignamos la y de la plataforma al personaje
                              }
                          }
-                     }else {
-                         //cuando no sea y mayor que la y de la plataforma tomamos el array list de las plataformas que se tocó
+                     }
+                         //para verificar si estamos fuera solo revisamos los calculos en la plataforma en la que nos encontramos y sobre ella revisamos si estamos dentro o si no entonces caemos pero de manera
+                        //particular por cada plataforma en la que nos encontramos
                          for (Rectangle formas : platafo) { // recorremos el array list
                              xx = (int) (formas.getX() + formas.getWidth()); //variable del espacio total que se puede recorrer en una plataforma
                              if (x<xx) {
                              }else{ //si ya el personaje no esta en la plataforma entonces se cae por la derecha
+
                                  if(y<SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight()-alto ) {
                                      if (contadorBajadaDerecha >= 0) {
                                          y++;
@@ -159,11 +160,13 @@ public class Personaje extends ComponentesJuego{
                                          contadorBajadaDerecha= 50;
                                      }
                                  }
+
                              }
 
                              if(x+ancho>formas.getX()){
 
                              }else{
+
                                  if(y<SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight()-alto) {
                                      if(contadorBajadaIzquierda>= 0){
                                      y++;
@@ -175,9 +178,9 @@ public class Personaje extends ComponentesJuego{
                                          contadorBajadaIzquierda = 50;
                                      }//caida por la izquierda
                                  }
+
                              }
                          }
-                     }
                  }
 
     }

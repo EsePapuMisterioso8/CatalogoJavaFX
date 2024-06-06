@@ -66,7 +66,7 @@ private Image imagen;
         }else {
             //balas.setX(SinglentonProyecto.getInstance().getEnemigop().x+20);
             balas.setX(SinglentonProyecto.getInstance().getEnemigop().x+47);
-            System.out.println(SinglentonProyecto.getInstance().getEnemigop().x+47);
+            //System.out.println(SinglentonProyecto.getInstance().getEnemigop().x+47);
         }
     }
     for (Rectangle balas: otro) {
