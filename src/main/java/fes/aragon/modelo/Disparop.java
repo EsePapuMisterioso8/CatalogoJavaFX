@@ -87,14 +87,28 @@ private ArrayList<Rectangle> soldadoArriba = new ArrayList<>();
 
 
     for (Rectangle bala: disparos){
-        if(bala.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x,SinglentonProyecto.getInstance().getPersonaje().y,40,60)){
+        if(bala.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x,SinglentonProyecto.getInstance().getPersonaje().y,20,30)){
             System.out.println("Muerto");
             SinglentonProyecto.getInstance().getPersonaje().setX(25);
             SinglentonProyecto.getInstance().getPersonaje().setY(580);
         }
     }
     for (Rectangle balas: otro){
-        if(balas.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x,SinglentonProyecto.getInstance().getPersonaje().y,40,60)){
+        if(balas.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x,SinglentonProyecto.getInstance().getPersonaje().y,20,30)){
+            System.out.println("Muerto");
+            SinglentonProyecto.getInstance().getPersonaje().setX(25);
+            SinglentonProyecto.getInstance().getPersonaje().setY(580);
+        }
+    }
+    for (Rectangle balas: soldadoBajo){
+        if(balas.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x,SinglentonProyecto.getInstance().getPersonaje().y,20,30)){
+            System.out.println("Muerto");
+            SinglentonProyecto.getInstance().getPersonaje().setX(25);
+            SinglentonProyecto.getInstance().getPersonaje().setY(580);
+        }
+    }
+    for (Rectangle balas:soldadoArriba){
+        if(balas.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x,SinglentonProyecto.getInstance().getPersonaje().y,20,30)){
             System.out.println("Muerto");
             SinglentonProyecto.getInstance().getPersonaje().setX(25);
             SinglentonProyecto.getInstance().getPersonaje().setY(580);
