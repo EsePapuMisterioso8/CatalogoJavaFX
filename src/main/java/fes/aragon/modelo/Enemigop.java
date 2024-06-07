@@ -9,15 +9,25 @@ import javafx.scene.shape.Rectangle;
 import java.util.ArrayList;
 
 public class Enemigop extends ComponentesJuego {
+
     private Rectangle soldado2;
+
     private Rectangle soldado1;
+
     private Rectangle figura;
+
     private Rectangle otraFigura;
+
     private boolean disparo = true;
+
     private int contador = 0;
+
     private int otroContador = 0;
+
     private int otrosContador = 0;
+
     private int contadors = 0;
+
 
     public Enemigop(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
@@ -48,15 +58,14 @@ public class Enemigop extends ComponentesJuego {
     @Override
     public void logicaCalculos() {
 
-
         if(disparo && contador>=0){
             if(contador<1) {
                 Rectangle rectangulo = new Rectangle(figura.getX() + figura.getWidth(), figura.getY()+(figura.getHeight()/2)-2, 15, 15);
                 SinglentonProyecto.getInstance().getDisparop().getDisparop().add(rectangulo);
                 contador++;
             }
-
         }
+
         if(disparo && otroContador>=0) {
             if (otroContador < 1) {
                 Rectangle rectangulos = new Rectangle(otraFigura.getX() + otraFigura.getWidth(), otraFigura.getY()+ (otraFigura.getHeight()/2)-3, 15, 15);
@@ -72,6 +81,7 @@ public class Enemigop extends ComponentesJuego {
                 otrosContador++;
             }
         }
+
         if(disparo && contadors>=0) {
             if (contadors < 1) {
                 Rectangle rectangulos = new Rectangle(soldado2.getX() + soldado2.getWidth(), soldado2.getY()+ (soldado2.getHeight()/2)-3, 15, 15);
@@ -79,9 +89,6 @@ public class Enemigop extends ComponentesJuego {
                 contadors++;
             }
         }
-
-
-
     }
 
 }

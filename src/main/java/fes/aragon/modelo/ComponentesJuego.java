@@ -7,8 +7,11 @@ import javafx.scene.input.MouseEvent;
 public abstract class ComponentesJuego {
 
     protected int x;
+
     protected int y;
+
     protected String imagen;
+
     protected int velocidad;
 
     public ComponentesJuego(int x, int y, String imagen, int velocidad) {
@@ -49,9 +52,13 @@ public abstract class ComponentesJuego {
     public void setVelocidad(int velocidad) {
         this.velocidad = velocidad;
     }
+
     public abstract void pintar(GraphicsContext grafico);
+
     public abstract void teclado(KeyEvent evento,boolean presion);
+
     public abstract void raton(MouseEvent evento);
+
     public abstract void logicaCalculos();
 
 }

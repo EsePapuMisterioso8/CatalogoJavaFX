@@ -10,18 +10,21 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 public class MusicaCiclica implements Runnable{
+
     private BufferedInputStream buffer=null;
+
     private Player player;
+
     private FileInputStream archivo;
-    private boolean estado;
+
     private Thread hilo;
+
     private String nombreArchivo;
 
 
     public String getNombreArchivo() {
         return nombreArchivo;
     }
-
 
     public MusicaCiclica(String nombreArchivo){
         this.nombreArchivo = nombreArchivo;
@@ -33,6 +36,7 @@ public class MusicaCiclica implements Runnable{
             throw new RuntimeException(e);
         }
     }
+
     @Override
     public void run() {
 
