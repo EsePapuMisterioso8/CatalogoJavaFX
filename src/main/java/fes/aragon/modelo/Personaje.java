@@ -13,27 +13,16 @@ import java.util.ArrayList;
 public class Personaje extends ComponentesJuego{
 
     private boolean enSalto;
-
     private boolean cara;
-
     private Image imagen;
-
     private boolean derecha;
-
     private boolean izquierda;
-
     private boolean abajo;
-
     private int ancho= 20;
-
     private int alto = 30;
-
     private boolean salto;
-
     int contador = 0;
-
     int contadorBajadaDerecha = 50;
-
     int contadorBajadaIzquierda = 50;
 
     public Personaje(int x, int y, String imagen, int velocidad) {
@@ -48,7 +37,7 @@ public class Personaje extends ComponentesJuego{
 
     @Override
     public void pintar(GraphicsContext grafico) {
-        grafico.drawImage(imagen,x,y,ancho,alto);
+    grafico.drawImage(imagen,x,y,ancho,alto);
     }
 
     @Override
@@ -75,14 +64,12 @@ public class Personaje extends ComponentesJuego{
                     abajo = false;
                     break;
                 }
-
             case "SPACE":
                 derecha = false;
                 izquierda = false;
                 salto = true;
                 abajo = false;
                 break;
-
         }
     }
 
@@ -93,11 +80,12 @@ public class Personaje extends ComponentesJuego{
 
     @Override
     public void logicaCalculos() {
-
         if (derecha) {
+
             if (x < SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho) {
                 this.x++;
             }
+
         } else if (izquierda) {
             if (x > 0) {
                 x--;
@@ -114,6 +102,7 @@ public class Personaje extends ComponentesJuego{
                 } else {
                     if (x > 0) {
                         x -= 2;
+
                     }
                 }
                 contador++;
@@ -124,25 +113,29 @@ public class Personaje extends ComponentesJuego{
             }
         } else {
             //cuando el salto es falso
+
             if(y<SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight()-alto) {
                 //bajamos y entonces el contador se vuelve cero para poder volver a saltar
                     y++;
                     contador = 0;
             }
             enSalto=false;
-        }
 
+
+
+        }
         //array list creado para almacenar las plataformas en las que caemos
         ArrayList<Rectangle> platafo = new ArrayList<>();
                 //iteramos en todas las plataformas
                  for (Rectangle forma: SinglentonProyecto.getInstance().getPlataformas().getPlataforma()) {
-
                      int xx = 0;//variable para ver cuando se salga el personaje de la plataforma
 
                      //si el personaje hace colision con la plataforma y su y es mayor o igual que la y de la plataforma
 
+
                      if (forma.getBoundsInLocal().intersects(SinglentonProyecto.getInstance().getPersonaje().x, SinglentonProyecto.getInstance().getPersonaje().y, 20, 30)) {
                      if(SinglentonProyecto.getInstance().getPersonaje().y<=forma.getY()) {
+
                              platafo.add(forma);
                              if (SinglentonProyecto.getInstance().getPersonaje().y<= forma.getY()) {
                                  y = (int) (forma.getY() - alto); //le asignamos la y de la plataforma al personaje
@@ -167,7 +160,9 @@ public class Personaje extends ComponentesJuego{
                                          contadorBajadaDerecha= 50;
                                      }
                                  }
+
                              }
+
                              if(x+ancho>formas.getX()){
 
                              }else{
@@ -183,9 +178,11 @@ public class Personaje extends ComponentesJuego{
                                          contadorBajadaIzquierda = 50;
                                      }//caida por la izquierda
                                  }
+
                              }
                          }
                  }
+
     }
 }
 
