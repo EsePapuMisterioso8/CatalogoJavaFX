@@ -1,10 +1,8 @@
 package fes.aragon.modelo;
 
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import java.util.ArrayList;
 
@@ -87,7 +85,7 @@ public class Plataformero extends ComponentesJuego{
                     plataformas.add(plataforma);
                     break;
                 case 16:
-                    plataforma = new Rectangle(387,518,33,5);
+                    plataforma = new Rectangle(387,518,31,5);
                     plataformas.add(plataforma);
                     break;
                 case 17:
