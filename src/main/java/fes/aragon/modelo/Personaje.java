@@ -24,6 +24,7 @@ public class Personaje extends ComponentesJuego{
     int contador = 0;
     int contadorBajadaDerecha = 50;
     int contadorBajadaIzquierda = 50;
+    private  boolean callendo;
 
     public Personaje(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
@@ -46,7 +47,7 @@ public class Personaje extends ComponentesJuego{
         switch (evento.getCode().toString()) {
 
             case "RIGHT":
-                if(enSalto==false) {
+                if(!enSalto) {
                     derecha = true;
                     cara = true;
                     izquierda = false;
@@ -54,9 +55,8 @@ public class Personaje extends ComponentesJuego{
                     abajo = false;
                     break;
                 }
-
             case "LEFT":
-                if(enSalto==false) {
+                if(!enSalto) {
                     derecha = false;
                     cara = false;
                     izquierda = true;
@@ -64,6 +64,7 @@ public class Personaje extends ComponentesJuego{
                     abajo = false;
                     break;
                 }
+
             case "SPACE":
                 derecha = false;
                 izquierda = false;
@@ -109,19 +110,18 @@ public class Personaje extends ComponentesJuego{
                 //cuando el maximo del salto se de entonces el salto se vuelve falso
                 if (contador == 36) {
                     salto = false;
+
                 }
             }
         } else {
             //cuando el salto es falso
-
             if(y<SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight()-alto) {
                 //bajamos y entonces el contador se vuelve cero para poder volver a saltar
+                    y++;
                     y++;
                     contador = 0;
             }
             enSalto=false;
-
-
 
         }
         //array list creado para almacenar las plataformas en las que caemos
