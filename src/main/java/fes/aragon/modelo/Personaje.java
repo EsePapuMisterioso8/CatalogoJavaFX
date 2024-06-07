@@ -24,7 +24,7 @@ public class Personaje extends ComponentesJuego{
     int contador = 0;
     int contadorBajadaDerecha = 50;
     int contadorBajadaIzquierda = 50;
-    private  boolean callendo;
+    private   boolean enpico;
 
     public Personaje(int x, int y, String imagen, int velocidad) {
         super(x, y, imagen, velocidad);
@@ -47,7 +47,7 @@ public class Personaje extends ComponentesJuego{
         switch (evento.getCode().toString()) {
 
             case "RIGHT":
-                if(!enSalto) {
+                if(enSalto==false) {
                     derecha = true;
                     cara = true;
                     izquierda = false;
@@ -55,8 +55,9 @@ public class Personaje extends ComponentesJuego{
                     abajo = false;
                     break;
                 }
+
             case "LEFT":
-                if(!enSalto) {
+                if(enSalto==false) {
                     derecha = false;
                     cara = false;
                     izquierda = true;
@@ -64,13 +65,14 @@ public class Personaje extends ComponentesJuego{
                     abajo = false;
                     break;
                 }
-
             case "SPACE":
-                derecha = false;
-                izquierda = false;
-                salto = true;
-                abajo = false;
-                break;
+                if(enpico==false) {
+                    derecha = false;
+                    izquierda = false;
+                    salto = true;
+                    abajo = false;
+                    break;
+                }
         }
     }
 
@@ -96,6 +98,7 @@ public class Personaje extends ComponentesJuego{
             if (contador <= 36) {
                 y--;
                 enSalto=true;
+                enpico=true;
                 //Si la cara a la que ves es la derecha saltarás hacía la derecha
                 if (x <= SinglentonProyecto.getInstance().getFondop().getImagenUno().getWidth() - ancho && cara == true) {
                     x += 2;
@@ -110,20 +113,27 @@ public class Personaje extends ComponentesJuego{
                 //cuando el maximo del salto se de entonces el salto se vuelve falso
                 if (contador == 36) {
                     salto = false;
-
+                    enpico=true;
                 }
             }
         } else {
             //cuando el salto es falso
-            if(y<SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight()-alto) {
-                //bajamos y entonces el contador se vuelve cero para poder volver a saltar
-                    y++;
+            enpico=false;
+            if (contador <= 36) {
+                if (y < SinglentonProyecto.getInstance().getFondop().getImagenUno().getHeight() - alto) {
+                    //bajamos y entonces el contador se vuelve cero para poder volver a saltar
                     y++;
                     contador = 0;
+                }
             }
+
+
             enSalto=false;
 
+
+
         }
+
         //array list creado para almacenar las plataformas en las que caemos
         ArrayList<Rectangle> platafo = new ArrayList<>();
                 //iteramos en todas las plataformas
