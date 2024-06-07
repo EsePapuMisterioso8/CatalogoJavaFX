@@ -23,29 +23,19 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="593.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagen/Cima.png" />
-         </image>
-      </ImageView>
       <Label layoutX="52.0" layoutY="256.0" text="Controles:">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <ImageView fitHeight="72.0" fitWidth="78.0" layoutX="534.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagen/Derecha.png" />
-         </image>
-      </ImageView>
       <Label layoutX="52.0" layoutY="300.0" text="Te permite mover a tu personaje hacia la derecha ">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="545.0" fitWidth="818.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="382.0" fitWidth="816.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imagen/MenuControles.jpg" />
+            <Image url="@../imagen/menu%20reglas.png" />
          </image>
       </ImageView>
    </children>
