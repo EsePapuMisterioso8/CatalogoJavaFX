@@ -22,11 +22,15 @@ public class ProyectoController {
 
     @FXML
     private Pane pnePrincipal;
+
     private Scene escena;
+
     private GraphicsContext graficos;
+
     public void setEscena(Scene scene){
         this.escena =scene;
     }
+
     public void iniciar(){
         componentesIniciar();
         cerrarJuego();
@@ -42,13 +46,13 @@ public class ProyectoController {
             @Override
             public void handle(long tiempoActual) {
                 double t = (tiempoActual-tiempoInicio)/1000000000.0;
-                calculosLogicos();
-                pintar();
                 try {
-                    Thread.sleep(9);
+                    Thread.sleep(5);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                calculosLogicos();
+                pintar();
             }
 
         };
@@ -65,6 +69,7 @@ public class ProyectoController {
     }
 
     public void eventosTeclado() {
+
         escena.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
@@ -72,6 +77,7 @@ public class ProyectoController {
                 SinglentonProyecto.getInstance().getPersonaje().teclado(event,true);
             }
         });
+
         escena.setOnKeyReleased(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
@@ -83,10 +89,10 @@ public class ProyectoController {
     }
 
     private void pintar() {
+
         for (ComponentesJuego componentesJuego: SinglentonProyecto.getInstance().getElementos()){
             componentesJuego.pintar(graficos);
         }
-
     }
 
     private void cerrarJuego() {

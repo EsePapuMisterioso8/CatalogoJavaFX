@@ -1,16 +1,12 @@
 package fes.aragon.controller;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import fes.aragon.modelo.MusicaCiclica;
-import fes.aragon.modelo.SinglentonPrueba;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;

@@ -10,10 +10,11 @@ public class SinglentonProyecto {
     private Plataformero plataform;
     private Enemigop enemigop;
     private Disparop disparop;
-    //private Trampas trampas;
+
     private SinglentonProyecto(){
         this.inicial();
     }
+
     public static SinglentonProyecto getInstance(){
         if(singlentonProyecto == null){
             singlentonProyecto = new SinglentonProyecto();
@@ -33,24 +34,29 @@ public class SinglentonProyecto {
         elementos.add(personaje);
         elementos.add(disparop);
         elementos.add(plataform);
-
     }
     public ArrayList<ComponentesJuego> getElementos(){
         return  this.elementos;
     }
+
     public Personaje getPersonaje(){
         return personaje;
     }
+
     public Fondop getFondop(){
         return fondop;
     }
+
     public Plataformero getPlataformas(){
         return plataform;
     }
+
     public Enemigop getEnemigop(){
         return enemigop;
     }
+
     public Disparop getDisparop(){
         return disparop;
     }
+
 }

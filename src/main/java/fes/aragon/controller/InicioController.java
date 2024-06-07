@@ -17,15 +17,18 @@ public class InicioController {
 
     @FXML
     private Button btnRacionales;
+
     @FXML
     private Button bntArchivo;
+
     @FXML
     private Button btnUsuarios;
+
     @FXML
     private Button btnJuego;
+
     @FXML
     private BorderPane btpPrincipal;
-
 
     @FXML
     void abrirArchivo(ActionEvent event) {
@@ -41,6 +44,7 @@ public class InicioController {
     void accionAbrirUsuarios(ActionEvent event) {
         escena("/fes/aragon/xml/usuarios.fxml");
     }
+
     @FXML
     void accionJuego(ActionEvent event) {
         escena("/fes/aragon/xml/menu.fxml");
@@ -53,6 +57,5 @@ public class InicioController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
